@@ -46,16 +46,7 @@ The benchmark and full harness are open source at [github.com/deshprateek/homepe
 
 ## What we found
 
-| Model | Size | Rows | False Act Rate | Level 2 Accuracy | Level 3 Accuracy |
-|---|---|---|---|---|---|
-| Mistral 7B Q4 (local) | 7B | 42† | 100% | 45% | 0% |
-| Llama 3.2 3B Q4 (local) | 3B | 42† | 100% | 80%* | 0% |
-| Qwen 2.5 32B Q4 (local) | 32B | 840 | **70%** | 60% | 16% |
-| Llama 3.3 70B fp16 (cloud) | 70B | 42† | 46% | 54% | 43% |
-| Qwen 32B fp16 (cloud) | 32B | 42† | 7% | 50% | 86% |
-| GPT-4o (cloud) | ~1T | 840 | **12%** | 60% | 83% |
-
-†42-row stratified sample. *43% parse error rate — result biased toward easier rows.
+![HomePersona v0.1 baseline results across seven models](https://raw.githubusercontent.com/deshprateek/homepersona-benchmark/main/charts/chart_results_table.png)
 
 ![False act rate across models — acted when it should have asked](https://raw.githubusercontent.com/deshprateek/homepersona-benchmark/main/charts/chart_false_act_rate.png)
 

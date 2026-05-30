@@ -1,7 +1,7 @@
 """
 Generate publication-quality charts for the HomePersona v0.1 baseline results.
 Run from the repo root: python charts/generate_charts.py
-Output: charts/chart_t2_flatness.png, charts/chart_false_act_rate.png
+Output: charts/chart_t2_flatness.png, charts/chart_false_act_rate.png, charts/chart_results_table.png
 """
 import pathlib
 import matplotlib.pyplot as plt
@@ -185,4 +185,79 @@ plt.tight_layout()
 out2 = OUT_DIR / "chart_false_act_rate.png"
 plt.savefig(out2, dpi=150, bbox_inches="tight")
 print(f"Saved {out2}")
+plt.close()
+
+
+# ── Chart 3: Results table ────────────────────────────────────────────────────
+fig3, ax3 = plt.subplots(figsize=(11, 3.2))
+ax3.axis("off")
+
+col_labels = ["Model", "Size", "Rows", "False Act Rate", "Level 2 Acc.", "Level 3 Acc."]
+rows = [
+    ["Mistral 7B Q4 (local)",       "7B",   "42†",  "100%",  "45%",  "0%" ],
+    ["Llama 3.2 3B Q4 (local)",     "3B",   "42†",  "100%",  "80%*", "0%" ],
+    ["Qwen 2.5 32B Q4 (local)",     "32B",  "840",  "70%",   "60%",  "16%"],
+    ["Llama 3.3 70B fp16 (cloud)",  "70B",  "42†",  "46%",   "54%",  "43%"],
+    ["Qwen 32B fp16 (cloud)",       "32B",  "42†",  "7%",    "50%",  "86%"],
+    ["GPT-4o (cloud)",              "~1T",  "840",  "12%",   "60%",  "83%"],
+]
+
+col_widths = [0.28, 0.08, 0.08, 0.16, 0.16, 0.16]
+
+tbl = ax3.table(
+    cellText=rows,
+    colLabels=col_labels,
+    cellLoc="center",
+    loc="center",
+    colWidths=col_widths,
+)
+tbl.auto_set_font_size(False)
+tbl.set_fontsize(10.5)
+tbl.scale(1, 2.0)
+
+# Style header
+for j in range(len(col_labels)):
+    cell = tbl[0, j]
+    cell.set_facecolor("#1D4ED8")
+    cell.set_text_props(color="white", fontweight="bold")
+    cell.set_edgecolor("white")
+
+# Style rows — alternate shading, highlight full-run rows and dangerous cells
+full_run_rows = {2, 5}   # Qwen Q4 and GPT-4o (0-indexed data rows)
+danger_col = 3            # False Act Rate column index
+
+for i, row_data in enumerate(rows):
+    row_idx = i + 1       # +1 for header
+    bg = "#F9FAFB" if i % 2 == 0 else "white"
+    for j in range(len(col_labels)):
+        cell = tbl[row_idx, j]
+        cell.set_facecolor(bg)
+        cell.set_edgecolor("#E5E7EB")
+        cell.set_text_props(color="#111827")
+
+    # Bold model name for full runs
+    if i in full_run_rows:
+        tbl[row_idx, 0].set_text_props(fontweight="bold")
+
+    # Colour-code False Act Rate cell
+    far_val = int(row_data[danger_col].replace("%", ""))
+    if far_val > 50:
+        tbl[row_idx, danger_col].set_facecolor("#FEE2E2")
+        tbl[row_idx, danger_col].set_text_props(color="#991B1B", fontweight="bold")
+    elif far_val > 20:
+        tbl[row_idx, danger_col].set_facecolor("#FEF3C7")
+        tbl[row_idx, danger_col].set_text_props(color="#92400E", fontweight="bold")
+    else:
+        tbl[row_idx, danger_col].set_facecolor("#D1FAE5")
+        tbl[row_idx, danger_col].set_text_props(color="#065F46", fontweight="bold")
+
+# Footer notes
+ax3.text(0.01, 0.01,
+         "† 42-row stratified sample.  * 43% parse error rate — result biased toward easier rows.  Bold = full 840-row run.",
+         transform=ax3.transAxes, fontsize=8.5, color=GREY, va="bottom")
+
+plt.tight_layout()
+out3 = OUT_DIR / "chart_results_table.png"
+plt.savefig(out3, dpi=150, bbox_inches="tight")
+print(f"Saved {out3}")
 plt.close()

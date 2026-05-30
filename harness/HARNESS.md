@@ -144,12 +144,13 @@ v0.1 runs two parallel tracks. Same benchmark rows, same system prompt, same sna
 
 | Config model name | Groq model ID | Size | Role |
 |---|---|---|---|
-| `groq/llama-3.2-3b-preview` | `llama-3.2-3b-preview` | 3B | Small baseline |
-| `groq/gemma2-9b-it` | `gemma2-9b-it` | 9B | Mid-size |
+| `groq/llama-3.1-8b-instant` | `llama-3.1-8b-instant` | 8B | Small baseline |
 | `groq/llama-3.3-70b-versatile` | `llama-3.3-70b-versatile` | 70B | Large open model |
+| `groq/qwen/qwen3-32b` | `qwen/qwen3-32b` | 32B | Size-matched to Q4 Qwen track |
 | `gpt-4o` | OpenAI | ~1T | Ceiling |
 
-Groq free tier: 30 req/min. Full 840-row run takes ~30 min per model.
+Note: `llama-3.2-3b-preview` was decommissioned by Groq; replaced with `llama-3.1-8b-instant`.
+`qwen3-32b` uses chain-of-thought thinking by default — expect higher token usage and rate limit pressure on full runs.
 Set `GROQ_API_KEY` env var before running fp16 track.
 
 ### Q4 Track (Ollama — local inference, 4-bit quantized)

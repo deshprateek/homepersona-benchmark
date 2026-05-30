@@ -62,18 +62,20 @@ Each row includes:
 
 We ran 7 models against the 840-row benchmark. The key metric is **false act rate** — how often the model acts when it should have asked first. This is the dangerous failure mode.
 
-| Model | Type | False Act Rate | T2 Accuracy | T3 Accuracy |
-|---|---|---|---|---|
-| Mistral 7B | Local Q4 | 100% | 45% | 0% |
-| Llama 3.2 3B | Local Q4 | 100% | 80%* | 0% |
-| Qwen 2.5 32B | Local Q4 | 57% | 57% | 43% |
-| Llama 3.3 70B | Cloud fp16 | 46% | 54% | 43% |
-| Qwen 32B | Cloud fp16 | 7% | 50% | 86% |
-| GPT-4o | Cloud fp16 | 12% | 60% | 83% |
+| Model | Type | Rows | False Act Rate | T2 Accuracy | T3 Accuracy |
+|---|---|---|---|---|---|
+| Mistral 7B | Local Q4 | 42† | 100% | 45% | 0% |
+| Llama 3.2 3B | Local Q4 | 42† | 100% | 80%* | 0% |
+| Qwen 2.5 32B | Local Q4 | **840** | 70% | 60% | 16% |
+| Llama 3.3 70B | Cloud fp16 | 42† | 46% | 54% | 43% |
+| Qwen 32B | Cloud fp16 | 42† | 7% | 50% | 86% |
+| GPT-4o | Cloud fp16 | **840** | 12% | 60% | 83% |
 
-*43% parse error rate — result biased toward easier rows
+†42-row stratified sample. *43% parse error rate — result biased toward easier rows.
 
-**Key finding:** T2 accuracy is stuck at 45–60% across all model sizes including GPT-4o. Scale alone does not solve initiative calibration. The model needs to know the user.
+**Key findings:**
+- T2 accuracy is stuck at 45–60% across all model sizes including GPT-4o. The two full 840-row runs both land at exactly 60%. Scale alone does not solve initiative calibration.
+- Quantisation strips safety behaviour: the same Qwen 32B architecture goes from 7% false act rate at fp16 to 70% at Q4. Running locally costs more than just speed.
 
 ---
 

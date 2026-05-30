@@ -1,0 +1,121 @@
+id,command,category,interaction_type,tier,expected_action,expected_initiative,notes
+MED-001,Turn off the TV,media,command,1,tv.set(state=off),act,
+MED-002,Turn on the TV,media,command,1,tv.set(state=on),act,
+MED-003,Pause the TV,media,command,1,tv.pause(),act,
+MED-004,Set the volume to 30,media,command,1,volume.set(level=30),act,
+MED-005,Set the volume to 50,media,command,1,volume.set(level=50),act,
+MED-006,Mute the speakers,media,command,1,volume.set(state=mute),act,
+MED-007,Unmute the speakers,media,command,1,volume.set(state=unmute),act,
+MED-008,Skip to the next track,media,command,1,audio.next(),act,
+MED-009,Go back to the previous track,media,command,1,audio.prev(),act,
+MED-010,Stop the music,media,command,1,audio.stop(),act,
+MED-011,Play jazz music in the living room,media,command,1,audio.play(room=living_room genre=jazz),act,
+MED-012,Turn off the kitchen speaker,media,command,1,speaker.set(room=kitchen state=off),act,
+MED-013,Turn on the bedroom speaker,media,command,1,speaker.set(room=bedroom state=on),act,
+MED-014,Switch to HDMI 1,media,command,1,tv.set(source=hdmi_1),act,
+MED-015,Open Netflix,media,command,1,tv.set(source=netflix),act,
+MED-016,Set the volume to full,media,command,1,volume.set(level=100),act,
+MED-017,Turn off all speakers,media,command,1,speaker.set(all=true state=off),act,
+MED-018,Play the radio,media,command,1,audio.play(source=radio),act,
+MED-019,Rewind 10 minutes,media,command,1,tv.rewind(duration=10min),act,
+MED-020,Fast forward 15 minutes,media,command,1,tv.forward(duration=15min),act,
+MED-021,Turn the volume down to 15,media,command,1,volume.set(level=15),act,
+MED-022,Play a podcast,media,command,1,audio.play(type=podcast),act,
+MED-023,Turn on subtitles,media,command,1,tv.set(subtitles=on),act,
+MED-024,Turn off subtitles,media,command,1,tv.set(subtitles=off),act,
+MED-025,Play classical music in the bedroom,media,command,1,audio.play(room=bedroom genre=classical),act,
+MED-026,Set the volume to 20,media,command,1,volume.set(level=20),act,
+MED-027,Turn on the living room speaker,media,command,1,speaker.set(room=living_room state=on),act,
+MED-028,Switch the TV to BBC iPlayer,media,command,1,tv.set(source=bbc_iplayer),act,
+MED-029,Play ambient music in the study,media,command,1,audio.play(room=study genre=ambient),act,
+MED-030,Turn the soundbar off,media,command,1,speaker.set(device=soundbar state=off),act,
+MED-031,Set the TV to HDMI 2,media,command,1,tv.set(source=hdmi_2),act,
+MED-032,Play Apple Music in the bedroom,media,command,1,audio.play(room=bedroom source=apple_music),act,
+MED-033,Stop the podcast,media,command,1,audio.stop(),act,
+MED-034,Turn off the living room speaker,media,command,1,speaker.set(room=living_room state=off),act,
+MED-035,Set the volume to 70 in the kitchen,media,command,1,volume.set(room=kitchen level=70),act,
+MED-036,Turn on some music,media,command,2,audio.play(room=unknown genre=unknown),ask,Which room? Which genre?
+MED-037,Play something relaxing,media,command,3,audio.play(room=current genre=ambient),ask,Room inferred. Relaxing interpreted as ambient
+MED-038,Can you put something on,media,command,2,audio.play(room=current genre=unknown),ask,Which room? What type of content?
+MED-039,I want to watch a film,media,command,2,tv.set(source=streaming mode=browse_films),act,Living room TV assumed. Streaming source inferred
+MED-040,Play something in the background,media,command,2,audio.play(room=current genre=ambient volume=low),act,Room inferred. Background implies low ambient
+MED-041,Turn it up a bit,media,command,2,volume.set(level=higher),act,Room inferred. Incremental increase assumed
+MED-042,Lower the volume,media,command,2,volume.set(level=lower),act,Room inferred. Incremental decrease assumed
+MED-043,Something upbeat please,media,command,3,audio.play(room=current genre=upbeat),ask,Room inferred. Upbeat interpreted as energetic genre
+MED-044,Put the news on,media,command,2,tv.set(source=news),act,Living room TV assumed
+MED-045,Can you find something to watch,media,command,2,tv.set(source=streaming mode=browse),ask,Which platform? Genre preference unknown
+MED-046,Play music for dinner,media,command,2,audio.play(room=dining genre=ambient volume=medium),act,Dining room inferred. Dinner music defaults to ambient
+MED-047,I want to listen to something while I work,media,command,3,audio.play(room=study genre=focus volume=low),ask,Study assumed. Focus music and low volume assumed
+MED-048,Something for the kids please,media,command,2,tv.set(source=streaming mode=children),ask,Which room? Which age group?
+MED-049,Turn the TV on,media,command,2,tv.set(state=on room=unknown),ask,Which room?
+MED-050,Make it louder,media,command,2,volume.set(level=higher),act,Room inferred. Incremental increase
+MED-051,Turn it down,media,command,2,volume.set(level=lower),act,Room inferred. Incremental decrease
+MED-052,Something to fall asleep to,media,command,2,audio.play(room=bedroom genre=sleep volume=low),act,Bedroom assumed. Sleep sounds and low volume assumed
+MED-053,Play my workout music,media,command,2,audio.play(genre=workout),ask,Which room? Which workout playlist?
+MED-054,Play something for cooking,media,command,2,audio.play(room=kitchen genre=upbeat volume=medium),act,Kitchen assumed. Upbeat genre and medium volume assumed
+MED-055,Find something interesting to watch,media,command,2,tv.set(source=streaming mode=browse),ask,Interesting is personal — no genre preference known
+MED-056,Put something on in the background,media,command,2,audio.play(room=current genre=ambient volume=low),act,Room inferred. Background implies ambient low
+MED-057,Can you turn the sound down in here,media,command,2,volume.set(room=current level=lower),act,Room inferred. Incremental decrease
+MED-058,I want to listen to something,media,command,2,audio.play(room=current genre=unknown),ask,Which genre?
+MED-059,Find me something good to watch,media,command,2,tv.set(source=streaming mode=browse),ask,Good is personal
+MED-060,Play something in the kids room,media,command,2,audio.play(room=child_bedroom genre=children),act,Children genre assumed
+MED-061,The TV seems too loud,media,command,2,volume.set(room=living_room level=lower),act,Living room TV assumed
+MED-062,Can you put some music on for us,media,command,2,audio.play(room=unknown genre=unknown),ask,Which room? Which genre?
+MED-063,Something calm for the evening,media,command,3,audio.play(room=current genre=calm),ask,Room inferred. Calm genre inferred from context
+MED-064,Set the mood with music,media,command,3,audio.play(room=unknown genre=unknown),ask,Mood for what? Which room?
+MED-065,Music for the party,media,command,3,audio.play(all=true genre=party volume=high),ask,Party music is personal — genre and rooms unknown
+MED-066,Set it up for movie night,media,command,3,multi.set([tv.set(source=streaming) volume.set(level=medium)]),ask,Movie night setup is personal — platform and exact volume unknown
+MED-067,Play something that matches the vibe,media,command,3,audio.play(genre=unknown),ask,Vibe is personal — requires history
+MED-068,Entertainment for guests,media,command,3,multi.set([tv.set(state=on) audio.play(room=unknown)]),ask,Guest entertainment is personal
+MED-069,Set the tone for the evening,media,command,3,audio.play(room=unknown genre=unknown),ask,Evening tone is personal
+MED-070,Background ambience,media,command,3,audio.play(room=unknown genre=ambient volume=low),ask,Which rooms? Ambience level is personal
+MED-071,Something for a lazy Sunday,media,command,3,audio.play(genre=unknown),ask,Lazy Sunday taste is personal
+MED-072,Music for cooking dinner together,media,command,3,audio.play(room=kitchen genre=unknown),ask,Together implies social — genre preference unknown
+MED-073,Create the right atmosphere,media,command,3,audio.play(genre=unknown),ask,Atmosphere is personal — no action without history
+MED-074,Set the right tone with music for tonight,media,command,3,audio.play(genre=unknown),ask,Tonight's tone is personal
+MED-075,Get the entertainment set up for a family evening,media,command,3,multi.set([tv.set(state=on) audio.play(room=unknown)]),ask,Family evening setup is personal
+MED-076,Music that suits what we are doing right now,media,command,3,audio.play(genre=unknown),ask,Activity-matched music is personal
+MED-077,Create the perfect sound for this moment,media,command,3,audio.play(genre=unknown),ask,Perfect sound is personal
+MED-078,The usual,media,command,4,unknown — requires user history,ask,Classic Tier 4
+MED-079,Like last time,media,command,4,unknown — requires user history,ask,
+MED-080,You know what I like,media,command,4,unknown — requires user history,ask,
+MED-081,Same as Friday night,media,command,4,unknown — requires user history,ask,
+MED-082,Do your thing,media,command,4,unknown — requires user history,ask,
+MED-083,The playlist we had at the dinner party,media,command,4,unknown — requires user history,ask,
+MED-084,Music like we had on holiday,media,command,4,unknown — requires user history,ask,
+MED-085,Turn the TV off every night at 11pm,media,automation,1,automation.create(trigger=time=23:00 action=tv.set(all=true state=off)),act,
+MED-086,Play the news every morning at 7am on the kitchen speaker,media,automation,1,automation.create(trigger=time=07:00 action=audio.play(room=kitchen source=news)),act,
+MED-087,When nobody is home turn off all speakers and the TV,media,automation,1,automation.create(trigger=occupancy=empty action=multi.set([speaker.set(all=true state=off) tv.set(all=true state=off)])),act,
+MED-088,Mute all speakers when the alarm is armed,media,automation,1,automation.create(trigger=alarm=armed action=volume.set(all=true state=mute)),act,
+MED-089,When I say goodnight turn off all the TV and speakers,media,automation,1,automation.create(trigger=utterance=goodnight action=multi.set([tv.set(all=true state=off) speaker.set(all=true state=off)])),act,
+MED-090,Turn on the kitchen radio every weekday at 8am,media,automation,1,automation.create(trigger=time=08:00 day=weekday action=audio.play(room=kitchen source=radio)),act,
+MED-091,Pause the music when the doorbell rings,media,automation,1,automation.create(trigger=event=doorbell action=audio.pause()),act,
+MED-092,Turn the TV off when I leave the house,media,automation,1,automation.create(trigger=event=user_leaves action=tv.set(all=true state=off)),act,
+MED-093,Turn off the bedroom speaker every night at 10pm,media,automation,1,automation.create(trigger=time=22:00 action=speaker.set(room=bedroom state=off)),act,
+MED-094,Turn off all media when everyone leaves,media,automation,1,automation.create(trigger=occupancy=empty action=multi.set([tv.set(all=true state=off) speaker.set(all=true state=off)])),act,
+MED-095,Play BBC Radio 4 in the kitchen every morning at 7am,media,automation,1,automation.create(trigger=time=07:00 action=audio.play(room=kitchen source=bbc_radio4)),act,
+MED-096,Turn all speakers off when everyone leaves,media,automation,1,automation.create(trigger=occupancy=empty action=speaker.set(all=true state=off)),act,
+MED-097,Mute the TV every day at 9pm in the living room,media,automation,1,automation.create(trigger=time=21:00 action=volume.set(room=living_room state=mute)),act,
+MED-098,Play relaxing music in the bedroom every night at 9pm,media,automation,1,automation.create(trigger=time=21:00 action=audio.play(room=bedroom genre=ambient volume=low)),act,
+MED-099,Turn the TV off when I leave the house,media,automation,1,automation.create(trigger=event=user_leaves action=tv.set(all=true state=off)),act,
+MED-100,Play music when I get home in the evening,media,automation,2,automation.create(trigger=event=user_arrives condition=time=evening action=audio.play(room=living_room genre=unknown)),ask,Which genre? Personal preference unknown
+MED-101,Adjust the volume when guests arrive,media,automation,2,automation.create(trigger=event=guests_arrive action=volume.set(level=lower)),act,Lower is inferred direction — how much lower is unknown
+MED-102,Turn on something to watch when I sit on the sofa,media,automation,2,automation.create(trigger=activity=sitting_sofa action=tv.set(state=on source=unknown)),ask,How to detect sitting? Which source?
+MED-103,Keep the volume low during dinner,media,automation,2,automation.create(trigger=event=dinner action=volume.set(level=low)),act,How low? Dinner time detection assumed
+MED-104,Turn the TV off if I fall asleep,media,automation,2,automation.create(trigger=activity=sleeping action=tv.set(state=off)),ask,How does system detect sleep?
+MED-105,Play something upbeat when I start my morning routine,media,automation,2,automation.create(trigger=event=morning_routine_start action=audio.play(genre=upbeat room=unknown)),ask,Which room? Morning routine trigger is personal
+MED-106,Match the music to the time of day,media,automation,2,automation.create(trigger=time=adaptive action=audio.play(genre=time_matched)),ask,Time-to-genre mapping is personal
+MED-107,Turn off all media when we go to bed,media,automation,2,automation.create(trigger=event=bedtime action=multi.set([tv.set(all=true state=off) speaker.set(all=true state=off)])),ask,What time is bedtime?
+MED-108,Reduce the volume when someone makes a phone call,media,automation,2,automation.create(trigger=activity=on_call action=volume.set(all=true level=lower)),ask,How much lower? Which devices?
+MED-109,Switch off the TV if nobody is watching after 30 minutes,media,automation,2,automation.create(trigger=activity=not_watching duration>30min action=tv.set(state=off)),ask,How does system detect nobody watching?
+MED-110,Put background music on automatically when guests arrive,media,automation,2,automation.create(trigger=event=guests_arrive action=audio.play(room=living_room genre=ambient volume=medium)),act,Living room and ambient are reasonable defaults
+MED-111,Play something upbeat in the morning when I start getting ready,media,automation,2,automation.create(trigger=event=morning_routine_start action=audio.play(genre=upbeat room=unknown)),ask,Which room? What triggers morning routine?
+MED-112,Set up the entertainment for the weekend,media,automation,3,automation.create(trigger=time=weekend action=unknown),ask,Weekend entertainment setup is personal
+MED-113,Create a dinner party atmosphere with music,media,automation,3,automation.create(trigger=event=dinner_party action=unknown),ask,Dinner party music is personal
+MED-114,Set up background sound for the house throughout the day,media,automation,3,automation.create(trigger=time=daytime action=unknown),ask,Background sound setup is personal
+MED-115,Automatically create the right vibe when I get home,media,automation,3,automation.create(trigger=event=user_arrives action=unknown),ask,Right vibe is personal — requires history
+MED-116,Set up the media for when we entertain,media,automation,3,automation.create(trigger=event=guests_arrive action=unknown),ask,Entertainment media setup is personal
+MED-117,Create an audio routine that feels right for different times of day in our home,media,automation,3,automation.create(trigger=time=adaptive action=unknown),ask,Time-of-day audio setup is personal
+MED-118,The usual with the TV and music when I get home,media,automation,4,unknown — requires user history,ask,
+MED-119,The usual evening entertainment setup,media,automation,4,unknown — requires user history,ask,
+MED-120,The usual music setup we have for Sunday afternoons,media,automation,4,unknown — requires user history,ask,

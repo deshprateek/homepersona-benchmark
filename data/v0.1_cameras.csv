@@ -1,0 +1,121 @@
+id,command,category,interaction_type,tier,expected_action,expected_initiative,notes
+CAM-001,Show me the front door camera,cameras,command,1,camera.view(device=front_door),act,
+CAM-002,Show me the back garden camera,cameras,command,1,camera.view(device=back_garden),act,
+CAM-003,Turn on motion detection on the front camera,cameras,command,1,camera.set(device=front_door motion_detection=on),act,
+CAM-004,Turn off motion detection on all cameras,cameras,command,1,camera.set(all=true motion_detection=off),act,
+CAM-005,Start recording on the front door camera,cameras,command,1,camera.record(device=front_door state=on),act,
+CAM-006,Stop recording on all cameras,cameras,command,1,camera.record(all=true state=off),act,
+CAM-007,Show me the baby monitor,cameras,command,1,camera.view(device=baby_monitor),act,
+CAM-008,Turn on the doorbell camera,cameras,command,1,camera.set(device=doorbell state=on),act,
+CAM-009,Turn off the doorbell camera,cameras,command,1,camera.set(device=doorbell state=off),act,
+CAM-010,Enable privacy mode on all indoor cameras,cameras,command,1,camera.set(location=indoor privacy=on),act,
+CAM-011,Disable privacy mode on all indoor cameras,cameras,command,1,camera.set(location=indoor privacy=off),act,
+CAM-012,Show me the garage camera,cameras,command,1,camera.view(device=garage),act,
+CAM-013,Turn on night vision on the front camera,cameras,command,1,camera.set(device=front_door night_vision=on),act,
+CAM-014,Turn off night vision on all cameras,cameras,command,1,camera.set(all=true night_vision=off),act,
+CAM-015,Set the front camera motion sensitivity to high,cameras,command,1,camera.set(device=front_door motion_sensitivity=high),act,
+CAM-016,Set the back camera motion sensitivity to low,cameras,command,1,camera.set(device=back_garden motion_sensitivity=low),act,
+CAM-017,Turn on all outdoor cameras,cameras,command,1,camera.set(location=outdoor state=on),act,
+CAM-018,Turn off all indoor cameras,cameras,command,1,camera.set(location=indoor state=off),act,
+CAM-019,Show me a live view of the driveway,cameras,command,1,camera.view(device=driveway),act,
+CAM-020,Turn on notifications for the front door camera,cameras,command,1,camera.set(device=front_door notifications=on),act,
+CAM-021,Turn off notifications for all cameras,cameras,command,1,camera.set(all=true notifications=off),act,
+CAM-022,Check if the front door camera is online,cameras,command,1,camera.check(device=front_door status=online),act,
+CAM-023,Start recording on the back garden camera,cameras,command,1,camera.record(device=back_garden state=on),act,
+CAM-024,Set the baby monitor to audio only mode,cameras,command,1,camera.set(device=baby_monitor mode=audio_only),act,
+CAM-025,Enable two-way audio on the front door camera,cameras,command,1,camera.set(device=front_door two_way_audio=on),act,
+CAM-026,Turn on motion detection on all cameras,cameras,command,1,camera.set(all=true motion_detection=on),act,
+CAM-027,Show me the side entrance camera,cameras,command,1,camera.view(device=side_entrance),act,
+CAM-028,Disable all camera notifications,cameras,command,1,camera.set(all=true notifications=off),act,
+CAM-029,Enable privacy mode on the baby monitor,cameras,command,1,camera.set(device=baby_monitor privacy=on),act,
+CAM-030,Start recording on the driveway camera,cameras,command,1,camera.record(device=driveway state=on),act,
+CAM-031,Turn off night vision on the back garden camera,cameras,command,1,camera.set(device=back_garden night_vision=off),act,
+CAM-032,Set doorbell camera notifications on,cameras,command,1,doorbell_camera.set(notifications=on),act,
+CAM-033,Check if the back garden camera is recording,cameras,command,1,camera.check(device=back_garden recording=active),act,
+CAM-034,Disable two-way audio on the front door camera,cameras,command,1,camera.set(device=front_door two_way_audio=off),act,
+CAM-035,Turn on all outdoor cameras,cameras,command,1,camera.set(location=outdoor state=on),act,
+CAM-036,Show me outside,cameras,command,2,camera.view(device=unknown location=outdoor),ask,Which outdoor camera?
+CAM-037,Check the cameras,cameras,command,2,camera.check(all=true status=online),act,Status check assumed as default check
+CAM-038,Who is at the door,cameras,command,2,camera.view(device=front_door),act,Front door assumed for doorbell context
+CAM-039,Is anyone in the garden,cameras,command,2,camera.view(device=back_garden),act,Back garden assumed
+CAM-040,Keep an eye on the front,cameras,command,2,"camera.set(device=front_door motion_detection=on notifications=on)",act,"Front door assumed. Motion detection and alerts assumed"
+CAM-041,Show me what is happening outside,cameras,command,2,camera.view(device=unknown location=outdoor),ask,Which outdoor camera?
+CAM-042,Any movement outside,cameras,command,2,camera.check(location=outdoor motion=recent),act,Check recent motion across outdoor cameras
+CAM-043,Check if the kids are okay,cameras,command,2,camera.view(device=unknown),ask,"Which camera? Where are the kids?"
+CAM-044,Show me the driveway,cameras,command,2,camera.view(device=driveway),act,Driveway camera assumed
+CAM-045,Is there anyone at the gate,cameras,command,2,camera.view(device=gate),act,Gate camera assumed
+CAM-046,Check the back,cameras,command,2,camera.view(device=back_garden),act,Back garden assumed
+CAM-047,Show me the baby,cameras,command,2,camera.view(device=baby_monitor),act,Baby monitor assumed
+CAM-048,Keep an eye on the dog,cameras,command,2,camera.view(device=unknown),ask,"Which camera? Where is the dog?"
+CAM-049,Is the postman there,cameras,command,2,camera.view(device=front_door),act,Front door assumed for delivery context
+CAM-050,Check if the delivery has arrived,cameras,command,2,camera.view(device=front_door),act,Front door assumed for delivery context
+CAM-051,Show me what is going on outside,cameras,command,2,camera.view(device=unknown location=outdoor),ask,Which outdoor camera?
+CAM-052,Any alerts from the cameras,cameras,command,2,camera.check(all=true alerts=recent),act,Check all recent alerts
+CAM-053,Is the garden clear,cameras,command,2,camera.view(device=back_garden),act,Back garden assumed
+CAM-054,Show me the side entrance,cameras,command,2,camera.view(device=side_entrance),act,Side entrance camera assumed
+CAM-055,Check if the garage is clear,cameras,command,2,camera.view(device=garage),act,Garage camera assumed
+CAM-056,Can you check outside for me,cameras,command,2,camera.view(device=unknown location=outdoor),ask,Which outdoor camera?
+CAM-057,Is there anything on the cameras,cameras,command,2,camera.check(all=true alerts=recent),act,Check all recent alerts
+CAM-058,Show me what is around the back,cameras,command,2,camera.view(device=back_garden),act,Back garden assumed
+CAM-059,Keep an eye on the front of the house,cameras,command,2,"camera.set(device=front_door motion_detection=on notifications=on)",act,Front door assumed
+CAM-060,Is the driveway clear,cameras,command,2,camera.view(device=driveway),act,Driveway camera assumed
+CAM-061,Check if anyone is near the gate,cameras,command,2,camera.view(device=front_door),act,Front camera assumed for gate area
+CAM-062,Pull up the cameras for me,cameras,command,2,camera.view(device=unknown),ask,Which camera?
+CAM-063,Have a look around outside for me,cameras,command,2,camera.view(device=unknown location=outdoor),ask,Which outdoor camera?
+CAM-064,Make sure the house is being watched,cameras,command,3,"camera.set(all=true motion_detection=on notifications=on)",ask,"Watched = personal — which cameras and sensitivity?"
+CAM-065,Set up security monitoring,cameras,command,3,"camera.set(all=true motion_detection=on recording=on)",ask,Monitoring level is personal
+CAM-066,Keep an eye on things while we are away,cameras,command,3,"camera.set(location=outdoor motion_detection=on notifications=on)",ask,Away monitoring setup is personal
+CAM-067,Set the cameras up for the night,cameras,command,3,"camera.set(all=true night_vision=on motion_detection=on)",ask,Night camera setup is personal
+CAM-068,Make sure everything is secure outside,cameras,command,3,"camera.set(location=outdoor motion_detection=on)",ask,"Secure outside is personal — which cameras and settings?"
+CAM-069,Monitor the house while we sleep,cameras,command,3,"camera.set(all=true motion_detection=on)",ask,"Sleep monitoring is personal — indoor cameras on or off?"
+CAM-070,Set the cameras up for when the kids are home alone,cameras,command,3,"camera.set(device=unknown motion_detection=on notifications=on)",ask,Which cameras? Indoor coverage is privacy sensitive
+CAM-071,Keep watch over the property,cameras,command,3,"camera.set(all=true state=on motion_detection=on)",ask,Property watch level is personal
+CAM-072,Make sure I would know if anything happened,cameras,command,3,"camera.set(all=true motion_detection=on notifications=on recording=on)",ask,Notification thresholds are personal
+CAM-073,Set up surveillance for the weekend,cameras,command,3,"camera.set(all=true motion_detection=on recording=on)",ask,Weekend surveillance is personal
+CAM-074,Set up the cameras so I always feel secure at night,cameras,command,3,"camera.set(all=true motion_detection=on night_vision=on)",ask,Security level at night is personal
+CAM-075,Make sure the property feels properly monitored,cameras,command,3,"camera.set(all=true motion_detection=on notifications=on)",ask,Monitoring level is personal
+CAM-076,Configure the cameras in a way that gives us peace of mind,cameras,command,3,camera.set(all=true motion_detection=on),ask,Peace of mind setup is personal
+CAM-077,Set up surveillance that does not feel intrusive but keeps us safe,cameras,command,3,camera.set(location=outdoor motion_detection=on),ask,Balance of surveillance and privacy is personal
+CAM-078,The usual camera setup,cameras,command,4,unknown — requires user history,ask,Classic Tier 4
+CAM-079,Like when we went away last time,cameras,command,4,unknown — requires user history,ask,
+CAM-080,You know how I like the cameras set,cameras,command,4,unknown — requires user history,ask,
+CAM-081,Same as before,cameras,command,4,unknown — requires user history,ask,
+CAM-082,Do what you normally do at night,cameras,command,4,unknown — requires user history,ask,
+CAM-083,The camera setup we had before the new system,cameras,command,4,unknown — requires user history,ask,requires user history
+CAM-084,Like when we went on holiday last time,cameras,command,4,unknown — requires user history,ask,requires user history
+CAM-085,Turn on motion detection on all outdoor cameras at sunset,cameras,automation,1,"automation.create(trigger=event=sunset action=camera.set(location=outdoor motion_detection=on))",act,
+CAM-086,Enable privacy mode on all cameras when I am home,cameras,automation,1,"automation.create(trigger=occupancy=user_home action=camera.set(location=indoor privacy=on))",act,
+CAM-087,Disable privacy mode when everyone leaves,cameras,automation,1,"automation.create(trigger=occupancy=empty action=camera.set(location=indoor privacy=off))",act,
+CAM-088,Turn on all outdoor cameras when the alarm is armed in away mode,cameras,automation,1,"automation.create(trigger=alarm=armed_away action=camera.set(location=outdoor state=on motion_detection=on))",act,
+CAM-089,Send me a notification when motion is detected at the front door,cameras,automation,1,"automation.create(trigger=camera=front_door motion=detected action=notify)",act,
+CAM-090,Start recording on all outdoor cameras at 11pm every night,cameras,automation,1,"automation.create(trigger=time=23:00 action=camera.record(location=outdoor state=on))",act,
+CAM-091,Turn off indoor camera recording when anyone is home,cameras,automation,1,"automation.create(trigger=occupancy=home action=camera.record(location=indoor state=off))",act,
+CAM-092,Enable night vision on all outdoor cameras at sunset,cameras,automation,1,"automation.create(trigger=event=sunset action=camera.set(location=outdoor night_vision=on))",act,
+CAM-093,Notify me when the doorbell is pressed,cameras,automation,1,"automation.create(trigger=event=doorbell action=notify)",act,
+CAM-094,Turn off all cameras when the alarm is disarmed at home,cameras,automation,1,"automation.create(trigger=alarm=disarmed_home action=camera.set(location=indoor state=off))",act,
+CAM-095,Turn off all indoor camera recordings when anyone is home,cameras,automation,1,"automation.create(trigger=occupancy=home action=camera.record(location=indoor state=off))",act,
+CAM-096,Send an alert if the front door camera loses connection,cameras,automation,1,"automation.create(trigger=event=camera_offline device=front_door action=notify)",act,
+CAM-097,Start recording on all cameras every night at midnight,cameras,automation,1,"automation.create(trigger=time=00:00 action=camera.record(all=true state=on))",act,
+CAM-098,Disable motion alerts during school pickup between 3pm and 4pm,cameras,automation,1,"automation.create(trigger=time=15:00 until=16:00 action=camera.set(all=true notifications=off))",act,
+CAM-099,Enable night vision on all outdoor cameras when it gets dark,cameras,automation,1,"automation.create(trigger=outdoor=dark action=camera.set(location=outdoor night_vision=on))",act,
+CAM-100,Record when there is unusual activity outside,cameras,automation,2,"automation.create(trigger=event=unusual_motion action=camera.record(location=outdoor state=on))",ask,"How is unusual activity defined? Which cameras?"
+CAM-101,Alert me if there is motion when we are away,cameras,automation,2,"automation.create(trigger=occupancy=away condition=motion_detected action=notify)",act,Which cameras? Any threshold for notification?
+CAM-102,Switch to night mode when it gets dark,cameras,automation,2,"automation.create(trigger=outdoor=dark action=camera.set(all=true night_vision=on))",act,All cameras? What threshold is dark?
+CAM-103,Keep the cameras recording overnight when we are travelling,cameras,automation,2,"automation.create(trigger=occupancy=extended_away condition=time=night action=camera.record(all=true state=on))",ask,All cameras including indoor? How long is extended away?
+CAM-104,Check the cameras automatically if the alarm goes off,cameras,automation,2,"automation.create(trigger=event=alarm_triggered action=camera.view(all=true))",ask,"View all or just triggered zone? Who gets notified?"
+CAM-105,Notify me if any camera detects motion for more than a minute,cameras,automation,2,"automation.create(trigger=camera=any condition=motion_duration>1min action=notify)",act,Which cameras? Threshold of 1 min is stated explicitly
+CAM-106,Set the motion sensitivity based on time of day,cameras,automation,2,"automation.create(trigger=time=adaptive action=camera.set(motion_sensitivity=time_based))",ask,Day vs night sensitivity levels are personal
+CAM-107,Record a clip whenever the doorbell rings,cameras,automation,2,"automation.create(trigger=event=doorbell action=camera.record(device=front_door duration=30s))",act,30 second clip is a reasonable default
+CAM-108,Record for 30 seconds whenever motion is detected at the front door,cameras,automation,2,"automation.create(trigger=camera=front_door motion=detected action=camera.record(device=front_door duration=30s))",act,30 seconds is a standard clip length
+CAM-109,Increase sensitivity on all cameras after dark,cameras,automation,2,"automation.create(trigger=outdoor=dark action=camera.set(all=true motion_sensitivity=high))",act,After dark and high sensitivity are inferable
+CAM-110,Automatically check cameras if the alarm goes off,cameras,automation,2,"automation.create(trigger=event=alarm_triggered action=camera.view(all=true))",ask,"Who gets notified? Which cameras?"
+CAM-111,Rotate through outdoor camera feeds when we are away,cameras,automation,2,"automation.create(trigger=occupancy=away action=camera.view(location=outdoor mode=rotate))",ask,"How often to rotate? Which display?"
+CAM-112,Set the cameras up to watch the house while we are on holiday,cameras,automation,3,"automation.create(trigger=occupancy=extended_away action=unknown)",ask,Holiday camera setup is personal
+CAM-113,Create a camera monitoring routine for overnight,cameras,automation,3,"automation.create(trigger=time=night action=unknown)",ask,Overnight monitoring setup is personal
+CAM-114,Set up the right level of surveillance for the family,cameras,automation,3,"automation.create(trigger=always action=unknown)",ask,Family surveillance level is personal
+CAM-115,Automatically adjust camera settings based on who is home,cameras,automation,3,"automation.create(trigger=occupancy=adaptive action=unknown)",ask,Per-person camera config is personal
+CAM-116,Make the camera system work around our routine,cameras,automation,3,"automation.create(trigger=adaptive action=unknown)",ask,Routine-aware cameras is personal — no setup without history
+CAM-117,Set up the camera system to monitor the property in a way that matches how we live,cameras,automation,3,"automation.create(trigger=adaptive action=unknown)",ask,Lifestyle-matched monitoring is personal
+CAM-118,Do what you normally do with the cameras when we go away,cameras,automation,4,unknown — requires user history,ask,
+CAM-119,The usual overnight camera setup,cameras,automation,4,unknown — requires user history,ask,
+CAM-120,The monitoring setup we had before we added the new cameras,cameras,automation,4,unknown — requires user history,ask,requires user history

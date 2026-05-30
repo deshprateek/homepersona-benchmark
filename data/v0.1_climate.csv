@@ -1,0 +1,121 @@
+id,command,category,interaction_type,tier,expected_action,expected_initiative,notes
+CLM-001,Set the thermostat to 20 degrees,climate,command,1,thermostat.set(temp=20 unit=C),act,
+CLM-002,Turn up the heating to 22 degrees,climate,command,1,thermostat.set(temp=22 unit=C mode=heat),act,
+CLM-003,Set the temperature to 18 degrees,climate,command,1,thermostat.set(temp=18 unit=C),act,
+CLM-004,Turn off the heating,climate,command,1,thermostat.set(mode=off),act,
+CLM-005,Switch on the air conditioning,climate,command,1,thermostat.set(mode=cool),act,
+CLM-006,Turn off the air conditioning,climate,command,1,thermostat.set(mode=off),act,
+CLM-007,Set the thermostat to 21 degrees in the bedroom,climate,command,1,"thermostat.set(room=bedroom temp=21 unit=C)",act,
+CLM-008,Turn on the bedroom fan,climate,command,1,fan.set(room=bedroom state=on),act,
+CLM-009,Switch off the living room fan,climate,command,1,fan.set(room=living_room state=off),act,
+CLM-010,Set the bedroom fan to high speed,climate,command,1,fan.set(room=bedroom speed=high),act,
+CLM-011,Turn the thermostat to cool mode,climate,command,1,thermostat.set(mode=cool),act,
+CLM-012,Switch the thermostat to heat mode,climate,command,1,thermostat.set(mode=heat),act,
+CLM-013,Set the thermostat to auto mode,climate,command,1,thermostat.set(mode=auto),act,
+CLM-014,Turn off all climate control,climate,command,1,"thermostat.set(all=true mode=off)",act,
+CLM-015,Set the living room temperature to 19 degrees,climate,command,1,"thermostat.set(room=living_room temp=19 unit=C)",act,
+CLM-016,Turn the kitchen fan on,climate,command,1,fan.set(room=kitchen state=on),act,
+CLM-017,Switch off the kitchen fan,climate,command,1,fan.set(room=kitchen state=off),act,
+CLM-018,Set the fan speed to low in the bedroom,climate,command,1,fan.set(room=bedroom speed=low),act,
+CLM-019,Turn the thermostat down to 17 degrees,climate,command,1,thermostat.set(temp=17 unit=C),act,
+CLM-020,Set the air conditioning to 20 degrees,climate,command,1,"thermostat.set(mode=cool temp=20 unit=C)",act,
+CLM-021,Check the air quality,climate,command,1,airquality.check(),act,
+CLM-022,Turn on the extractor fan in the kitchen,climate,command,1,"fan.set(room=kitchen device=extractor state=on)",act,
+CLM-023,Switch off the kitchen extractor fan,climate,command,1,"fan.set(room=kitchen device=extractor state=off)",act,
+CLM-024,Turn on the bathroom fan,climate,command,1,fan.set(room=bathroom state=on),act,
+CLM-025,Switch off the bathroom fan,climate,command,1,fan.set(room=bathroom state=off),act,
+CLM-026,Set the study thermostat to 20 degrees,climate,command,1,"thermostat.set(room=study temp=20 unit=C)",act,
+CLM-027,Turn on the dining room fan,climate,command,1,fan.set(room=dining state=on),act,
+CLM-028,Switch off the master bedroom fan,climate,command,1,fan.set(room=master_bedroom state=off),act,
+CLM-029,Set the fan to medium speed in the living room,climate,command,1,"fan.set(room=living_room speed=medium)",act,
+CLM-030,Turn on the heating throughout the house,climate,command,1,"thermostat.set(all=true mode=heat)",act,
+CLM-031,Switch off all fans,climate,command,1,"fan.set(all=true state=off)",act,
+CLM-032,Set the thermostat to cool mode at 22 degrees,climate,command,1,"thermostat.set(mode=cool temp=22 unit=C)",act,
+CLM-033,Turn off the extractor fan in the bathroom,climate,command,1,"fan.set(room=bathroom device=extractor state=off)",act,
+CLM-034,Set the bedroom thermostat to 19 degrees in heat mode,climate,command,1,"thermostat.set(room=bedroom temp=19 unit=C mode=heat)",act,
+CLM-035,Set the air purifier to auto mode,climate,command,1,air_purifier.set(mode=auto),act,
+CLM-036,Make it warmer in here,climate,command,2,"thermostat.set(room=current temp=higher)",act,Room inferred from occupancy. How much warmer?
+CLM-037,Turn the heating up a bit,climate,command,2,"thermostat.set(room=current temp=higher)",act,Room inferred. How much?
+CLM-038,It is too cold in here,climate,command,2,"thermostat.set(room=current temp=higher)",act,Room inferred from occupancy. How much higher?
+CLM-039,Make it cooler,climate,command,2,"thermostat.set(room=current temp=lower)",act,Room inferred. How much?
+CLM-040,Can you cool the place down,climate,command,2,"thermostat.set(mode=cool room=unknown)",ask,The place = whole home implied but which rooms have climate control?
+CLM-041,Turn on the heating,climate,command,2,"thermostat.set(mode=heat room=unknown)",ask,Which room?
+CLM-042,It is a bit stuffy in here,climate,command,2,"fan.set(room=current state=on speed=low)",act,Room inferred. Fan assumed over window
+CLM-043,Can you freshen the air a bit,climate,command,2,"fan.set(room=current state=on speed=low)",act,Room inferred. Fan assumed
+CLM-044,Turn the temperature down,climate,command,2,"thermostat.set(room=current temp=lower)",act,Room inferred. How much?
+CLM-045,It is getting warm in here,climate,command,2,"thermostat.set(room=current temp=lower)",act,Room inferred. How much lower?
+CLM-046,Can you adjust the temperature,climate,command,2,"thermostat.set(room=current temp=unknown)",ask,Which direction? How much?
+CLM-047,Turn the fan up,climate,command,2,"fan.set(room=current speed=higher)",act,Room inferred. How much higher?
+CLM-048,Turn the fan down a bit,climate,command,2,"fan.set(room=current speed=lower)",act,Room inferred. How much lower?
+CLM-049,It feels cold,climate,command,2,"thermostat.set(room=current temp=higher)",act,Room inferred. How much higher?
+CLM-050,I need some air,climate,command,2,fan.set(room=current state=on),act,Room inferred. Fan type assumed
+CLM-051,The fan is too loud,climate,command,2,"fan.set(room=current speed=lower)",act,Room inferred. How much lower?
+CLM-052,Turn the heating off for now,climate,command,2,thermostat.set(mode=off),act,All rooms assumed
+CLM-053,Cool it down a little,climate,command,2,"thermostat.set(room=current temp=lower)",act,Room inferred. How much?
+CLM-054,I am too warm,climate,command,2,"thermostat.set(room=current temp=lower)",act,Room inferred. How much lower?
+CLM-055,A bit more heat please,climate,command,2,"thermostat.set(room=current temp=higher)",act,Room inferred. How much?
+CLM-056,The house feels cold today,climate,command,2,"thermostat.set(all=true temp=higher)",act,Whole home assumed. How much warmer?
+CLM-057,Can you check the temperature in here,climate,command,2,thermostat.check(room=current),act,Room inferred from occupancy
+CLM-058,The air feels heavy in here,climate,command,2,"fan.set(room=current state=on speed=low)",act,Room inferred. Fan assumed
+CLM-059,It is getting warm in the bedroom,climate,command,2,"thermostat.set(room=bedroom temp=lower)",act,Room specified. How much lower?
+CLM-060,Can you do something about the temperature,climate,command,2,"thermostat.set(room=current temp=unknown)",ask,Which direction?
+CLM-061,The fan is too noisy,climate,command,2,"fan.set(room=current speed=lower)",act,Room inferred. Reduce speed
+CLM-062,Make it a bit warmer for the kids,climate,command,2,"thermostat.set(room=unknown temp=higher)",ask,Which room are the kids in?
+CLM-063,The room needs some air,climate,command,2,fan.set(room=current state=on),act,Room inferred from occupancy
+CLM-064,Set it to a comfortable sleeping temperature,climate,command,3,"thermostat.set(room=bedroom temp=unknown)",ask,Comfortable for sleep is personal
+CLM-065,Make it feel like summer inside,climate,command,3,"thermostat.set(temp=unknown mode=cool)",ask,Summer feel is personal
+CLM-066,Set the climate for working from home,climate,command,3,"thermostat.set(room=unknown temp=unknown)",ask,WFH climate is personal. Which room?
+CLM-067,Make the bedroom perfect for sleeping,climate,command,3,"thermostat.set(room=bedroom temp=unknown)",ask,Sleep temperature is personal
+CLM-068,Set it up for movie night,climate,command,3,"thermostat.set(room=living_room temp=unknown)",ask,Movie temperature is personal
+CLM-069,Set the house to my preferred temperature,climate,command,3,"thermostat.set(all=true temp=unknown)",ask,Preferred = requires personal history
+CLM-070,Get the temperature right for guests,climate,command,3,thermostat.set(temp=unknown),ask,Guest comfort is personal. Which rooms?
+CLM-071,Make it cosy,climate,command,3,"multi.set([thermostat.set(room=unknown temp=higher) fan.set(state=off)])",ask,Cosy temperature is personal. Which room?
+CLM-072,Set the house up for a cold night,climate,command,3,"thermostat.set(all=true temp=unknown)",ask,How warm? Personal preference
+CLM-073,Make it feel like home,climate,command,3,"thermostat.set(all=true temp=unknown)",ask,Highly personal — no action possible without history
+CLM-074,Set the house up for a lazy weekend,climate,command,3,"thermostat.set(all=true temp=unknown)",ask,Weekend comfort is personal
+CLM-075,Make it feel like a proper cosy home,climate,command,3,"thermostat.set(all=true temp=unknown)",ask,Cosy temperature is personal
+CLM-076,Get the temperature just right for this evening,climate,command,3,thermostat.set(temp=unknown),ask,Just right is personal
+CLM-077,Make it perfect for working from home today,climate,command,3,"thermostat.set(room=unknown temp=unknown)",ask,WFH comfort is personal
+CLM-078,The usual temperature please,climate,command,4,unknown — requires user history,ask,Classic Tier 4
+CLM-079,Like last night,climate,command,4,unknown — requires user history,ask,
+CLM-080,You know what temperature I like,climate,command,4,unknown — requires user history,ask,
+CLM-081,Same as yesterday,climate,command,4,unknown — requires user history,ask,
+CLM-082,The way we had it when the family was over,climate,command,4,unknown — requires user history,ask,
+CLM-083,The way I like it in winter,climate,command,4,unknown — requires user history,ask,requires user history
+CLM-084,How we had it set up before the new thermostat,climate,command,4,unknown — requires user history,ask,requires user history
+CLM-085,Every morning at 7am set the thermostat to 20 degrees,climate,automation,1,"automation.create(trigger=time=07:00 action=thermostat.set(temp=20 unit=C))",act,
+CLM-086,When nobody is home turn the heating off,climate,automation,1,"automation.create(trigger=occupancy=empty action=thermostat.set(mode=off))",act,
+CLM-087,Turn the heating on when I get home,climate,automation,1,"automation.create(trigger=event=user_arrives action=thermostat.set(mode=heat temp=20 unit=C))",act,Target temp is a common default — will be personalised by adapter
+CLM-088,Every night at 10pm set the bedroom to 18 degrees,climate,automation,1,"automation.create(trigger=time=22:00 action=thermostat.set(room=bedroom temp=18 unit=C))",act,
+CLM-089,Turn on the kitchen fan when I am cooking,climate,automation,1,"automation.create(trigger=activity=cooking action=fan.set(room=kitchen device=extractor state=on))",act,
+CLM-090,Turn the bathroom fan off 10 minutes after a shower,climate,automation,1,"automation.create(trigger=activity=showering_ends delay=10min action=fan.set(room=bathroom state=off))",act,
+CLM-091,When it is above 25 degrees outside turn on the air conditioning,climate,automation,1,"automation.create(trigger=outdoor_temp>25C action=thermostat.set(mode=cool))",act,
+CLM-092,Switch the heating off every morning at 9am,climate,automation,1,"automation.create(trigger=time=09:00 action=thermostat.set(mode=off))",act,
+CLM-093,When the last person leaves turn off all climate control,climate,automation,1,"automation.create(trigger=occupancy=empty action=thermostat.set(all=true mode=off))",act,
+CLM-094,Every weekend morning at 8am warm the house to 21 degrees,climate,automation,1,"automation.create(trigger=time=08:00 day=weekend action=thermostat.set(temp=21 unit=C))",act,
+CLM-095,Turn the heating on every weekday at 6am,climate,automation,1,"automation.create(trigger=time=06:00 day=weekday action=thermostat.set(mode=heat))",act,
+CLM-096,Switch the air purifier on when the air quality drops,climate,automation,1,"automation.create(trigger=condition=air_quality=poor action=air_purifier.set(state=on speed=high))",act,
+CLM-097,Turn all fans off when nobody is home,climate,automation,1,"automation.create(trigger=occupancy=empty action=fan.set(all=true state=off))",act,
+CLM-098,Heat the house to 21 degrees every weekend morning at 9am,climate,automation,1,"automation.create(trigger=time=09:00 day=weekend action=thermostat.set(temp=21 unit=C mode=heat))",act,
+CLM-099,Turn the bathroom fan on whenever someone is in the bathroom,climate,automation,1,"automation.create(trigger=occupancy=bathroom action=fan.set(room=bathroom state=on))",act,
+CLM-100,When I wake up make it comfortable,climate,automation,2,"automation.create(trigger=event=wake_up action=thermostat.set(temp=unknown))",ask,Comfortable = personal. Target temp unknown
+CLM-101,Pre-heat the house before I get home,climate,automation,2,"automation.create(trigger=event=user_arrives_soon action=thermostat.set(mode=heat temp=unknown))",ask,Target temp unknown. How soon before arrival?
+CLM-102,Adjust the temperature when the weather changes,climate,automation,2,"automation.create(trigger=event=weather_change action=thermostat.set(temp=adaptive))",ask,Adjust how? By how much?
+CLM-103,Keep the bedroom cool at night,climate,automation,2,"automation.create(trigger=time=night action=thermostat.set(room=bedroom temp=lower))",ask,How cool? What time range is night?
+CLM-104,Cool the house down in the afternoon,climate,automation,2,"automation.create(trigger=time=afternoon action=thermostat.set(mode=cool temp=unknown))",ask,How cool? What time counts as afternoon?
+CLM-105,Turn the fan on when it gets stuffy,climate,automation,2,"automation.create(trigger=condition=air_quality=poor action=fan.set(room=unknown state=on))",ask,Which room? What triggers stuffy — CO2 or humidity?
+CLM-106,Adjust heating based on how cold it is outside,climate,automation,2,"automation.create(trigger=outdoor_temp=adaptive action=thermostat.set(temp=adaptive))",act,Adaptive rule — what is the adjustment ratio? Common sense assumes proportional
+CLM-107,Keep the house at a nice temperature when guests are over,climate,automation,2,"automation.create(trigger=guests=present action=thermostat.set(temp=unknown))",ask,Nice = personal. Which rooms?
+CLM-108,Adjust the temperature when the weather changes drastically outside,climate,automation,2,"automation.create(trigger=event=weather_change action=thermostat.set(temp=adaptive))",act,Proportional adjustment assumed
+CLM-109,Cool the house down in summer afternoons,climate,automation,2,"automation.create(trigger=time=afternoon condition=season=summer action=thermostat.set(mode=cool temp=unknown))",ask,How cool? What time is afternoon?
+CLM-110,Warm up the bedrooms before the kids go to sleep,climate,automation,2,"automation.create(trigger=event=children_bedtime action=thermostat.set(room=child_bedroom temp=unknown))",ask,Target temperature unknown. What time?
+CLM-111,Make sure the house is never too cold when we get back,climate,automation,2,"automation.create(trigger=event=user_arrives_soon action=thermostat.set(mode=heat temp=unknown))",ask,Target temperature unknown
+CLM-112,Set up the climate for when we entertain,climate,automation,3,"automation.create(trigger=event=guests_arrive action=unknown)",ask,Entertaining climate is personal
+CLM-113,Make the house feel perfect when I get home in winter,climate,automation,3,"automation.create(trigger=event=user_arrives condition=season=winter action=unknown)",ask,Perfect feel is personal
+CLM-114,Set up a bedtime climate routine for me,climate,automation,3,"automation.create(trigger=time=bedtime action=unknown)",ask,Bedtime climate is personal
+CLM-115,Automatically keep the house at the right temperature,climate,automation,3,"automation.create(trigger=continuous action=thermostat.set(temp=adaptive))",ask,Right temperature is personal — no specific value
+CLM-116,Set the climate up for my morning routine,climate,automation,3,"automation.create(trigger=time=morning action=unknown)",ask,Morning climate routine is personal
+CLM-117,Set up a climate schedule that works for our whole family throughout the day,climate,automation,3,"automation.create(trigger=time=adaptive action=unknown)",ask,Family climate schedule is personal
+CLM-118,Do what you normally do in the evening,climate,automation,4,unknown — requires user history,ask,
+CLM-119,Set it up the way I like it in winter,climate,automation,4,unknown — requires user history,ask,
+CLM-120,Do the same heating schedule as last winter,climate,automation,4,unknown — requires user history,ask,requires user history

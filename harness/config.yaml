@@ -1,0 +1,5 @@
+model: mistral:7b          # mistral:7b | phi3:mini | llama3.2:3b | gpt-4o
+snapshot: A               # A=Evening | B=Morning | C=Away | D=Night
+sample_only: true         # true = run 42-row sample; false = full 840 rows
+retry_on_parse_error: 1   # number of retries before logging parse_error=true
+model_timeout_seconds: 300

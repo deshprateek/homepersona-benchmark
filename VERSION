@@ -1,0 +1,5 @@
+v0.1.0
+cmds_hash: a48c4833
+# Bump version + update cmds_hash only when the `command` column changes in any CSV.
+# Label-only changes (expected_action, expected_initiative, notes, tier) do not require a bump.
+# Run `python harness/check_version.py` to verify. run.py calls this at startup.

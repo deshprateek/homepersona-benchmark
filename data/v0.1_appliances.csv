@@ -1,0 +1,121 @@
+id,command,category,interaction_type,tier,expected_action,expected_initiative,notes
+APP-001,Turn on the dishwasher,appliances,command,1,dishwasher.set(state=on),act,
+APP-002,Turn off the dishwasher,appliances,command,1,dishwasher.set(state=off),act,
+APP-003,Start the washing machine,appliances,command,1,washing_machine.set(state=on),act,
+APP-004,Turn off the washing machine,appliances,command,1,washing_machine.set(state=off),act,
+APP-005,Set the oven to 180 degrees,appliances,command,1,oven.set(state=on temp=180 unit=C),act,
+APP-006,Turn off the oven,appliances,command,1,oven.set(state=off),act,
+APP-007,Start the robot vacuum,appliances,command,1,vacuum.set(state=on),act,
+APP-008,Send the robot vacuum home,appliances,command,1,vacuum.set(state=dock),act,
+APP-009,Boil the kettle,appliances,command,1,kettle.set(state=on),act,
+APP-010,Make a coffee,appliances,command,1,coffee_maker.set(state=on),act,
+APP-011,Start the dryer,appliances,command,1,dryer.set(state=on),act,
+APP-012,Turn off the dryer,appliances,command,1,dryer.set(state=off),act,
+APP-013,Set the oven to 200 degrees fan mode,appliances,command,1,"oven.set(state=on temp=200 unit=C mode=fan)",act,
+APP-014,Start the dishwasher on eco mode,appliances,command,1,dishwasher.set(state=on mode=eco),act,
+APP-015,Set the washing machine to a quick wash,appliances,command,1,washing_machine.set(state=on mode=quick),act,
+APP-016,Turn on the air purifier,appliances,command,1,air_purifier.set(state=on),act,
+APP-017,Turn off the air purifier,appliances,command,1,air_purifier.set(state=off),act,
+APP-018,Set the air purifier to high speed,appliances,command,1,air_purifier.set(speed=high),act,
+APP-019,Start the dishwasher on intensive mode,appliances,command,1,dishwasher.set(state=on mode=intensive),act,
+APP-020,Set the oven to grill mode,appliances,command,1,oven.set(state=on mode=grill),act,
+APP-021,Run the microwave for 2 minutes,appliances,command,1,microwave.set(state=on duration=2min),act,
+APP-022,Stop the microwave,appliances,command,1,microwave.set(state=off),act,
+APP-023,Set the coffee maker to make two cups,appliances,command,1,coffee_maker.set(state=on cups=2),act,
+APP-024,Start the washing machine on a cold wash,appliances,command,1,washing_machine.set(state=on temp=cold),act,
+APP-025,Turn off the coffee maker,appliances,command,1,coffee_maker.set(state=off),act,
+APP-026,Start the washing machine on a delicate cycle,appliances,command,1,washing_machine.set(state=on mode=delicate),act,
+APP-027,Set the oven to 200 degrees fan mode,appliances,command,1,"oven.set(state=on temp=200 unit=C mode=fan)",act,
+APP-028,Turn off the air purifier,appliances,command,1,air_purifier.set(state=off),act,
+APP-029,Set the coffee maker to make one espresso,appliances,command,1,coffee_maker.set(state=on type=espresso cups=1),act,
+APP-030,Run the microwave for 3 minutes,appliances,command,1,microwave.set(state=on duration=3min),act,
+APP-031,Set the dryer to low heat,appliances,command,1,dryer.set(state=on mode=low),act,
+APP-032,Start the dishwasher on quick mode,appliances,command,1,dishwasher.set(state=on mode=quick),act,
+APP-033,Set the coffee maker to make four cups,appliances,command,1,coffee_maker.set(state=on cups=4),act,
+APP-034,Turn off the kettle,appliances,command,1,kettle.set(state=off),act,
+APP-035,Stop the robot vacuum and send it home,appliances,command,1,vacuum.set(state=dock),act,
+APP-036,Run the dishwasher,appliances,command,2,dishwasher.set(state=on mode=unknown),ask,Which mode? Is it full?
+APP-037,Do the laundry,appliances,command,2,washing_machine.set(state=on mode=unknown),ask,Which wash mode? Temperature?
+APP-038,Vacuum the house,appliances,command,2,vacuum.set(state=on room=all),act,All rooms assumed — any excluded?
+APP-039,Get dinner started,appliances,command,2,oven.set(state=on temp=unknown),ask,What temperature? What mode?
+APP-040,Make me a coffee,appliances,command,2,coffee_maker.set(state=on type=unknown),ask,Which type of coffee?
+APP-041,Vacuum downstairs,appliances,command,2,vacuum.set(state=on floor=downstairs),act,Downstairs rooms assumed
+APP-042,Start the washing,appliances,command,2,washing_machine.set(state=on mode=unknown),ask,Which mode and temperature?
+APP-043,Get the oven ready for baking,appliances,command,2,"oven.set(state=on temp=180 unit=C mode=bake)",act,Baking defaults to 180C — specific recipe unknown
+APP-044,Run the vacuum while we are out,appliances,command,2,vacuum.set(state=on room=all),act,All rooms assumed
+APP-045,Start a wash for the gym kit,appliances,command,2,washing_machine.set(state=on mode=sport temp=40),act,Sport mode and 40C are standard for gym kit
+APP-046,Put the dishwasher on,appliances,command,2,dishwasher.set(state=on mode=unknown),ask,Which mode?
+APP-047,Vacuum just the living room,appliances,command,2,vacuum.set(state=on room=living_room),act,Room specified — routing assumed possible
+APP-048,Get the kettle on,appliances,command,2,kettle.set(state=on),act,Boil to 100C assumed as default
+APP-049,Pre-heat the oven,appliances,command,2,oven.set(state=on temp=unknown),ask,What temperature?
+APP-050,Run a light vacuum,appliances,command,2,vacuum.set(state=on mode=quick),act,Quick mode assumed for light pass
+APP-051,Start the laundry on a hot wash,appliances,command,2,washing_machine.set(state=on temp=60),act,60C assumed for hot wash
+APP-052,Do a quick vacuum,appliances,command,2,vacuum.set(state=on mode=quick),act,Quick mode assumed
+APP-053,Clean up while I am at work,appliances,command,2,vacuum.set(state=on room=all),act,Robot vacuum assumed. All rooms assumed
+APP-054,Run a cycle before we get home,appliances,command,2,dishwasher.set(state=on mode=unknown),ask,Which appliance? Which mode?
+APP-055,Get something running before we arrive,appliances,command,2,appliance.set(device=unknown state=on),ask,Which appliance?
+APP-056,Get the kitchen appliances going for cooking,appliances,command,2,"multi.set([oven.set(state=on temp=unknown) kettle.set(state=on)])",ask,What temperature for oven?
+APP-057,Run the cleaner while I am in the garden,appliances,command,2,vacuum.set(state=on room=all),act,All rooms assumed while outside
+APP-058,Get something started in the kitchen,appliances,command,2,appliance.set(device=unknown state=on),ask,Which appliance?
+APP-059,Start the laundry for the week,appliances,command,2,washing_machine.set(state=on mode=unknown),ask,Which wash mode and temperature?
+APP-060,Get the appliances ready for the morning,appliances,command,2,"multi.set([coffee_maker.set(state=on) kettle.set(state=on)])",ask,Which appliances for morning?
+APP-061,Run a wash for the bedding,appliances,command,2,washing_machine.set(state=on temp=60 mode=normal),act,60C normal wash assumed for bedding
+APP-062,Get the oven going for dinner,appliances,command,2,oven.set(state=on temp=unknown),ask,What temperature?
+APP-063,Clean the downstairs while we are out,appliances,command,2,vacuum.set(state=on floor=downstairs),act,Downstairs assumed when out
+APP-064,Sort out the cleaning,appliances,command,3,vacuum.set(state=on room=unknown),ask,Which rooms? What level of clean?
+APP-065,Get the house ready for guests,appliances,command,3,"multi.set([vacuum.set(state=on room=all) dishwasher.set(state=on)])",ask,Guest prep is personal — which appliances and in what order?
+APP-066,Do the chores while I am out,appliances,command,3,appliance.set(device=unknown state=on),ask,Which chores? Personal routine unknown
+APP-067,Set up the kitchen for cooking,appliances,command,3,"multi.set([oven.set(state=on temp=unknown) kettle.set(state=on)])",ask,Which appliances? What temperature?
+APP-068,Make sure everything is clean,appliances,command,3,"multi.set([vacuum.set(state=on) dishwasher.set(state=on)])",ask,Everything is personal — which appliances?
+APP-069,Get the laundry done,appliances,command,3,washing_machine.set(state=on mode=unknown),ask,Which wash? Personal laundry routine unknown
+APP-070,Have the house sorted by this evening,appliances,command,3,appliance.set(device=unknown state=on),ask,Sorted = personal — which appliances and tasks?
+APP-071,Do a clean of the downstairs,appliances,command,3,vacuum.set(state=on floor=downstairs),ask,Which rooms on downstairs? Deep or light clean?
+APP-072,Get the appliances running,appliances,command,3,appliance.set(device=unknown state=on),ask,Which appliances?
+APP-073,Have things ready for when we get back,appliances,command,3,appliance.set(device=unknown state=on),ask,Ready = personal — which appliances?
+APP-074,Sort out the kitchen for tonight's cooking session,appliances,command,3,"multi.set([oven.set(state=on temp=unknown) kettle.set(state=on)])",ask,Cooking session setup is personal
+APP-075,Get the house in order for the week ahead,appliances,command,3,appliance.set(device=unknown state=on),ask,Week prep routine is personal
+APP-076,Have everything clean and ready before guests arrive this weekend,appliances,command,3,"multi.set([vacuum.set(state=on) dishwasher.set(state=on)])",ask,Guest prep is personal
+APP-077,Manage the appliances around our schedule this week,appliances,command,3,appliance.set(device=unknown state=on),ask,Schedule-aware management is personal
+APP-078,The usual cleaning routine,appliances,command,4,unknown — requires user history,ask,Classic Tier 4
+APP-079,Like you do on Saturdays,appliances,command,4,unknown — requires user history,ask,
+APP-080,You know what to do when I leave,appliances,command,4,unknown — requires user history,ask,
+APP-081,Same as last time,appliances,command,4,unknown — requires user history,ask,
+APP-082,Do what you normally do,appliances,command,4,unknown — requires user history,ask,
+APP-083,The usual Saturday morning appliance routine,appliances,command,4,unknown — requires user history,ask,
+APP-084,Like you did when we had the family over,appliances,command,4,unknown — requires user history,ask,
+APP-085,Run the dishwasher every night at 11pm,appliances,automation,1,"automation.create(trigger=time=23:00 action=dishwasher.set(state=on mode=eco))",act,
+APP-086,Start the robot vacuum every day at noon,appliances,automation,1,"automation.create(trigger=time=12:00 action=vacuum.set(state=on))",act,
+APP-087,Turn the oven off if nobody is home after 30 minutes,appliances,automation,1,"automation.create(trigger=occupancy=empty delay=30min action=oven.set(state=off))",act,
+APP-088,Notify me when the washing machine finishes,appliances,automation,1,"automation.create(trigger=event=washing_machine_complete action=notify)",act,
+APP-089,Run the coffee maker every morning at 7am,appliances,automation,1,"automation.create(trigger=time=07:00 action=coffee_maker.set(state=on))",act,
+APP-090,Start the robot vacuum when everyone leaves,appliances,automation,1,"automation.create(trigger=occupancy=empty action=vacuum.set(state=on))",act,
+APP-091,Turn off all appliances when the alarm is set to away,appliances,automation,1,"automation.create(trigger=alarm=away action=appliance.set(all=true state=off))",act,
+APP-092,Run the dishwasher every Sunday at 10pm,appliances,automation,1,"automation.create(trigger=time=22:00 day=sunday action=dishwasher.set(state=on))",act,
+APP-093,Notify me when the oven reaches temperature,appliances,automation,1,"automation.create(trigger=oven=target_temp_reached action=notify)",act,
+APP-094,Turn the kettle on at 7am every weekday,appliances,automation,1,"automation.create(trigger=time=07:00 day=weekday action=kettle.set(state=on))",act,
+APP-095,Run the robot vacuum every Monday Wednesday and Friday at noon,appliances,automation,1,"automation.create(trigger=time=12:00 day=monday,wednesday,friday action=vacuum.set(state=on))",act,
+APP-096,Start the dishwasher every night at 10pm,appliances,automation,1,"automation.create(trigger=time=22:00 action=dishwasher.set(state=on mode=eco))",act,
+APP-097,Turn the coffee maker on every morning at 6:30am,appliances,automation,1,"automation.create(trigger=time=06:30 action=coffee_maker.set(state=on))",act,
+APP-098,Switch the air purifier to high when air quality drops,appliances,automation,1,"automation.create(trigger=condition=air_quality=poor action=air_purifier.set(speed=high))",act,
+APP-099,Turn the oven off automatically after 2 hours if nobody is home,appliances,automation,1,"automation.create(trigger=occupancy=empty duration>2hr condition=oven=on action=oven.set(state=off))",act,
+APP-100,Run the vacuum when we go out,appliances,automation,2,"automation.create(trigger=event=all_leave action=vacuum.set(state=on room=unknown))",ask,Which rooms?
+APP-101,Start the washing machine during off-peak hours,appliances,automation,2,"automation.create(trigger=time=off_peak action=washing_machine.set(state=on mode=unknown))",ask,What are off-peak hours? Which wash mode?
+APP-102,Pre-heat the oven before I get home,appliances,automation,2,"automation.create(trigger=event=user_arrives_soon action=oven.set(state=on temp=unknown))",ask,What temperature? How soon before arrival?
+APP-103,Run the dishwasher when it is full,appliances,automation,2,"automation.create(trigger=condition=dishwasher=full action=dishwasher.set(state=on))",ask,How does system detect dishwasher is full?
+APP-104,Remind me to take the laundry out after the cycle,appliances,automation,2,"automation.create(trigger=event=washing_machine_complete action=notify delay=5min)",act,5 minute delay before reminder is a reasonable default
+APP-105,Start the coffee maker when I wake up,appliances,automation,2,"automation.create(trigger=event=wake_up action=coffee_maker.set(state=on))",ask,How does system detect wake-up? What type of coffee?
+APP-106,Run the appliances while the electricity is cheapest,appliances,automation,2,"automation.create(trigger=time=off_peak action=appliance.set(device=unknown state=on))",ask,Which appliances? Off-peak schedule not known
+APP-107,Clean up while we are sleeping,appliances,automation,2,"automation.create(trigger=activity=sleeping action=vacuum.set(state=on))",ask,How does system detect sleeping? Which rooms?
+APP-108,Run the washing machine overnight when electricity is cheaper,appliances,automation,2,"automation.create(trigger=time=off_peak action=washing_machine.set(state=on mode=unknown))",ask,Which wash mode? Off-peak time unknown
+APP-109,Start appliances while we are sleeping,appliances,automation,2,appliance.set(device=unknown state=on),ask,Which appliances?
+APP-110,Pre-heat the oven when I leave work,appliances,automation,2,"automation.create(trigger=event=user_leaves_work action=oven.set(state=on temp=unknown))",ask,What temperature?
+APP-111,Run the vacuum when the house is empty and it has not run today,appliances,automation,2,"automation.create(trigger=occupancy=empty condition=vacuum=not_run_today action=vacuum.set(state=on))",act,Condition is specific enough to act
+APP-112,Have the house clean and ready when guests arrive,appliances,automation,3,"automation.create(trigger=event=guests_arrive action=unknown)",ask,Guest clean is personal — which appliances and tasks?
+APP-113,Set up the appliances around my schedule,appliances,automation,3,"automation.create(trigger=adaptive action=unknown)",ask,Schedule-aware appliances is personal — no setup without history
+APP-114,Make sure the kitchen is ready for cooking in the evenings,appliances,automation,3,"automation.create(trigger=time=evening action=unknown)",ask,Kitchen ready is personal — which appliances?
+APP-115,Automatically manage the chores so I do not have to think about it,appliances,automation,3,"automation.create(trigger=continuous action=unknown)",ask,Autonomous chore management is personal
+APP-116,Set up a cleaning routine for the week,appliances,automation,3,"automation.create(trigger=time=weekly action=unknown)",ask,Weekly cleaning routine is personal
+APP-117,Manage the household appliances automatically so they fit around our weekly routine,appliances,automation,3,"automation.create(trigger=adaptive action=unknown)",ask,Weekly appliance routine is personal
+APP-118,Do the usual when we leave for the weekend,appliances,automation,4,unknown — requires user history,ask,
+APP-119,The normal appliance routine,appliances,automation,4,unknown — requires user history,ask,
+APP-120,The appliance schedule we had running before we changed the routine,appliances,automation,4,unknown — requires user history,ask,

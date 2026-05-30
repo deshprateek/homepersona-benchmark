@@ -1,0 +1,121 @@
+id,command,category,interaction_type,tier,expected_action,expected_initiative,notes
+LGT-001,Turn off the kitchen lights,lighting,command,1,light.set(room=kitchen state=off),act,
+LGT-002,Turn on the living room lights,lighting,command,1,light.set(room=living_room state=on),act,
+LGT-003,Switch off the bedroom lights,lighting,command,1,light.set(room=bedroom state=off),act,
+LGT-004,Turn on the bathroom light,lighting,command,1,light.set(room=bathroom state=on),act,
+LGT-005,Switch off all the lights,lighting,command,1,light.set(all=true state=off),act,
+LGT-006,Turn on the hallway light,lighting,command,1,light.set(room=hallway state=on),act,
+LGT-007,Dim the bedroom lights to 30 percent,lighting,command,1,light.set(room=bedroom brightness=30%),act,
+LGT-008,Set the living room lights to 80 percent,lighting,command,1,light.set(room=living_room brightness=80%),act,
+LGT-009,Brighten the kitchen lights to full,lighting,command,1,light.set(room=kitchen brightness=100%),act,
+LGT-010,Turn the dining room lights to 50 percent,lighting,command,1,light.set(room=dining brightness=50%),act,
+LGT-011,Set the study lights to 70 percent brightness,lighting,command,1,light.set(room=study brightness=70%),act,
+LGT-012,Turn on the garden lights,lighting,command,1,light.set(room=garden state=on),act,
+LGT-013,Switch off the garden lights,lighting,command,1,light.set(room=garden state=off),act,
+LGT-014,Set the bedroom lights to warm white,lighting,command,1,light.set(room=bedroom colour=warm_white),act,
+LGT-015,Change the living room lights to cool white,lighting,command,1,light.set(room=living_room colour=cool_white),act,
+LGT-016,Turn on the desk lamp,lighting,command,1,light.set(device=desk_lamp state=on),act,
+LGT-017,Switch off the floor lamp,lighting,command,1,light.set(device=floor_lamp state=off),act,
+LGT-018,Turn on the night light in the hallway,lighting,command,1,light.set(room=hallway device=night_light state=on),act,
+LGT-019,Set all lights to 50 percent,lighting,command,1,light.set(all=true brightness=50%),act,
+LGT-020,Turn on the porch light,lighting,command,1,light.set(room=porch state=on),act,
+LGT-021,Turn on the outdoor lights,lighting,command,1,light.set(room=outdoor state=on),act,
+LGT-022,Set the reading lamp to full brightness,lighting,command,1,light.set(device=reading_lamp brightness=100%),act,
+LGT-023,Dim the lights in here,lighting,command,1,light.set(room=current brightness=lower),act,Assumes current room — incremental decrease
+LGT-024,Turn the lights off in here,lighting,command,1,light.set(room=current state=off),act,Assumes current room
+LGT-025,Brighten it up in here,lighting,command,1,light.set(room=current brightness=100%),act,Assumes current room
+LGT-026,Set the child's bedroom lights to 20 percent,lighting,command,1,light.set(room=child_bedroom brightness=20%),act,
+LGT-027,Turn on the stair lights,lighting,command,1,light.set(room=stairs state=on),act,
+LGT-028,Set the landing light to 50 percent,lighting,command,1,light.set(room=landing brightness=50%),act,
+LGT-029,Switch on the bathroom mirror light,lighting,command,1,light.set(device=mirror_light room=bathroom state=on),act,
+LGT-030,Turn off the dining room lights,lighting,command,1,light.set(room=dining state=off),act,
+LGT-031,Turn on the outdoor flood lights,lighting,command,1,light.set(device=flood_light room=outdoor state=on),act,
+LGT-032,Turn on the garage light,lighting,command,1,light.set(room=garage state=on),act,
+LGT-033,Switch off the guest bedroom light,lighting,command,1,light.set(room=guest_bedroom state=off),act,
+LGT-034,Set all the bedroom lights to warm white,lighting,command,1,light.set(room=bedroom all=true colour=warm_white),act,
+LGT-035,Turn on the loft light,lighting,command,1,light.set(room=loft state=on),act,
+LGT-036,Dim the lights,lighting,command,2,light.set(room=unknown brightness=low),ask,Which room? How much?
+LGT-037,Turn on some lights,lighting,command,2,light.set(room=unknown state=on),ask,Which lights?
+LGT-038,Make it brighter in here,lighting,command,2,light.set(room=current brightness=higher),act,Room inferred. Magnitude not specified — incremental assumed
+LGT-039,Can you soften the lighting a bit,lighting,command,2,light.set(room=current brightness=lower colour=warmer),act,Room inferred. Soft implies warm and dim
+LGT-040,Set a nice light for reading,lighting,command,2,light.set(device=reading_lamp brightness=80% colour=warm_white),act,Reading lamp assumed — standard reading level
+LGT-041,Put on some soft lighting,lighting,command,2,light.set(room=unknown brightness=30% colour=warm_white),ask,Which room?
+LGT-042,Make it a bit darker,lighting,command,2,light.set(room=current brightness=lower),act,Room inferred. Incremental decrease assumed
+LGT-043,Lights are too bright,lighting,command,2,light.set(room=current brightness=lower),act,Room inferred. Magnitude inferred from complaint
+LGT-044,Can you adjust the lights for movie time,lighting,command,2,light.set(room=living_room brightness=20% colour=warm_white),act,Living room inferred — settings are standard movie defaults
+LGT-045,Set the bedroom lighting for sleep,lighting,command,2,light.set(room=bedroom state=off),act,Sleep implies off — user may prefer dim; flag for confirmation
+LGT-046,Turn on a light so I can see,lighting,command,2,light.set(room=current state=on),act,Room inferred. General illumination assumed
+LGT-047,Light up the entrance a bit,lighting,command,2,light.set(room=hallway brightness=60%),act,Hallway inferred for entrance
+LGT-048,Make it cosy,lighting,command,2,light.set(room=unknown brightness=30% colour=warm_white),ask,Which room? Cosy interpreted as warm and dim
+LGT-049,The light in here is too harsh,lighting,command,2,light.set(room=current colour=warmer brightness=lower),act,Room inferred. Harsh implies colour and brightness both need adjusting
+LGT-050,Lights for dinner please,lighting,command,2,light.set(room=dining brightness=50% colour=warm_white),act,Dining room inferred. Brightness is standard dinner default
+LGT-051,Turn on the lights please,lighting,command,2,light.set(room=unknown state=on),ask,Which lights?
+LGT-052,A bit more light in here,lighting,command,2,light.set(room=current brightness=higher),act,Room inferred. Incremental increase assumed
+LGT-053,Can you set the lights for working from home,lighting,command,3,light.set(room=study brightness=80% colour=cool_white),ask,Study assumed. Cool white and high brightness standard for work
+LGT-054,Could use some more light,lighting,command,2,light.set(room=current brightness=higher),act,Room inferred
+LGT-055,Lights on for the kids,lighting,command,2,light.set(room=unknown state=on),ask,Which rooms do the kids use?
+LGT-056,Can you sort the lights out,lighting,command,2,light.set(room=unknown state=unknown),ask,Which room? What needs sorting?
+LGT-057,It is getting dark in here,lighting,command,2,light.set(room=current brightness=higher),act,Room inferred. Brightness increased
+LGT-058,The lights are on in rooms nobody is using,lighting,command,2,light.set(room=unoccupied state=off),act,Occupancy inferred
+LGT-059,I need some light over here,lighting,command,2,light.set(room=current state=on),act,Room inferred from occupancy
+LGT-060,Turn a light on for me,lighting,command,2,light.set(room=unknown state=on),ask,Which light?
+LGT-061,Dim it a bit more,lighting,command,2,light.set(room=current brightness=lower),act,Room inferred. Incremental decrease
+LGT-062,Something is too bright in here,lighting,command,2,light.set(room=current brightness=lower colour=warmer),act,Room inferred
+LGT-063,The lights seem off everywhere,lighting,command,2,light.check(all=true status=on),ask,Check or turn on?
+LGT-064,Set the mood,lighting,command,3,light.set(room=unknown brightness=30% colour=warm_white),ask,Mood for what? Which room?
+LGT-065,Set the mood for dinner,lighting,command,3,multi.set([light.set(room=dining brightness=40% colour=warm_white)]),ask,Mood for dinner is personal — exact settings unknown without history
+LGT-066,Prepare the house for guests,lighting,command,3,multi.set([light.set(all=true brightness=80%) light.set(room=garden state=on)]),ask,Multi-room — guest setup is personal
+LGT-067,Set a romantic atmosphere,lighting,command,3,light.set(room=unknown brightness=20% colour=red),ask,Which room? Romantic is personal
+LGT-068,Movie night setup,lighting,command,3,light.set(room=living_room brightness=10% colour=warm_white),ask,Exact settings are personal
+LGT-069,Bedtime,lighting,command,3,multi.set([light.set(room=bedroom brightness=5%) light.set(all_other=true state=off)]),ask,Bedtime routine is personal
+LGT-070,Wake me up gently,lighting,command,3,light.set(room=bedroom brightness=gradual colour=warm_to_cool),ask,Gradual speed and end state are personal
+LGT-071,Party mode,lighting,command,3,light.set(all=true colour=cycling brightness=100%),ask,Highly personal — some users hate colour cycling
+LGT-072,Set it like a calm evening,lighting,command,3,light.set(room=unknown brightness=30% colour=warm_white),ask,Which room? Calm is personal
+LGT-073,Wind down the house,lighting,command,3,multi.set([light.set(room=bedroom brightness=20%) light.set(all_other=true brightness=lower)]),ask,Personal variation on how to wind down
+LGT-074,Help me wind down for the evening,lighting,command,3,light.set(room=unknown brightness=low colour=warm_white),ask,Wind down is personal
+LGT-075,Create an ambience for tonight,lighting,command,3,light.set(room=unknown brightness=unknown colour=unknown),ask,Ambience is personal
+LGT-076,Make it feel homely in here,lighting,command,3,light.set(room=unknown brightness=low colour=warm_white),ask,Homely is personal
+LGT-077,Set the lights for a quiet night in,lighting,command,3,light.set(room=unknown brightness=low),ask,Quiet night setup is personal
+LGT-078,The usual evening setup,lighting,command,4,unknown — requires user history,ask,Classic Tier 4
+LGT-079,Like last night,lighting,command,4,unknown — requires user history,ask,
+LGT-080,You know what I like at this time,lighting,command,4,unknown — requires user history,ask,
+LGT-081,Do your thing,lighting,command,4,unknown — requires user history,ask,
+LGT-082,Same as yesterday,lighting,command,4,unknown — requires user history,ask,
+LGT-083,The way we had it last Christmas,lighting,command,4,unknown — requires user history,ask,requires user history
+LGT-084,Like at the old house,lighting,command,4,unknown — requires user history,ask,requires user history
+LGT-085,When I get home in the evening turn on the hallway and living room lights,lighting,automation,1,automation.create(trigger=event=user_arrives condition=time=evening action=multi.set([light.set(room=hallway state=on) light.set(room=living_room state=on)])),act,
+LGT-086,Every night at 11pm turn off all the lights,lighting,automation,1,automation.create(trigger=time=23:00 action=light.set(all=true state=off)),act,
+LGT-087,When nobody is home turn off all the lights,lighting,automation,1,automation.create(trigger=occupancy=empty action=light.set(all=true state=off)),act,
+LGT-088,Turn on the garden lights every day at sunset,lighting,automation,1,automation.create(trigger=event=sunset action=light.set(room=garden state=on)),act,
+LGT-089,Switch off the garden lights at sunrise,lighting,automation,1,automation.create(trigger=event=sunrise action=light.set(room=garden state=off)),act,
+LGT-090,When I say goodnight turn off all the lights except the bedroom,lighting,automation,1,automation.create(trigger=utterance=goodnight action=multi.set([light.set(all=true state=off) light.set(room=bedroom brightness=10%)])),act,
+LGT-091,Turn the kitchen lights on at 7am every weekday,lighting,automation,1,automation.create(trigger=time=07:00 day=weekday action=light.set(room=kitchen state=on)),act,
+LGT-092,Switch off the porch light every morning at 8am,lighting,automation,1,automation.create(trigger=time=08:00 action=light.set(room=porch state=off)),act,
+LGT-093,When the last person leaves turn off all the lights,lighting,automation,1,automation.create(trigger=occupancy=empty action=light.set(all=true state=off)),act,
+LGT-094,Turn on the outdoor lights every day at 6pm,lighting,automation,1,automation.create(trigger=time=18:00 action=light.set(room=outdoor state=on)),act,
+LGT-095,Turn off all lights in unoccupied rooms every hour,lighting,automation,1,automation.create(trigger=time=hourly condition=room=unoccupied action=light.set(room=unoccupied state=off)),act,
+LGT-096,Switch the garden lights on at 6pm every day,lighting,automation,1,automation.create(trigger=time=18:00 action=light.set(room=garden state=on)),act,
+LGT-097,Turn off the stair lights every night at 11pm,lighting,automation,1,automation.create(trigger=time=23:00 action=light.set(room=stairs state=off)),act,
+LGT-098,Switch the garage light off when the garage door closes,lighting,automation,1,automation.create(trigger=garage=closed action=light.set(room=garage state=off)),act,
+LGT-099,Turn on the hallway light at 20 percent when motion is detected at night,lighting,automation,1,automation.create(trigger=event=motion_detected condition=time=night room=hallway action=light.set(room=hallway brightness=20%)),act,
+LGT-100,Dim the living room lights when I start watching TV,lighting,automation,2,automation.create(trigger=activity=watching_tv action=light.set(room=living_room brightness=low)),act,How dim? Detect TV activity from which signal?
+LGT-101,Turn on the bedroom light gently 30 minutes before my alarm,lighting,automation,2,automation.create(trigger=time=alarm_minus_30m action=light.set(room=bedroom brightness=gradual)),ask,Needs alarm time — how gradual?
+LGT-102,When guests arrive make the house feel welcoming,lighting,automation,2,automation.create(trigger=event=guests_arrive action=light.set(all=true brightness=high)),act,Welcoming interpreted as high brightness — personal but inferable
+LGT-103,Automatically adjust lighting based on the time of day,lighting,automation,2,automation.create(trigger=time=adaptive action=light.set(all=true colour=circadian)),ask,Circadian schedule is personal
+LGT-104,Switch off the study lights when I leave the room,lighting,automation,2,automation.create(trigger=occupancy=study=empty action=light.set(room=study state=off)),act,Occupancy detection assumed for study
+LGT-105,Turn on the hallway light when someone comes to the door,lighting,automation,2,automation.create(trigger=event=doorbell action=light.set(room=hallway state=on)),act,Hallway assumed — which exterior light also?
+LGT-106,Set the lights low after 9pm,lighting,automation,2,automation.create(trigger=time=21:00 action=light.set(all=true brightness=30%)),ask,All rooms? How low exactly?
+LGT-107,Turn the living room lights off when nobody is in there,lighting,automation,2,automation.create(trigger=occupancy=living_room=empty action=light.set(room=living_room state=off)),act,Occupancy detection assumed
+LGT-108,Gradually brighten the bedroom lights in the morning when I wake up,lighting,automation,2,automation.create(trigger=event=wake_up action=light.set(room=bedroom brightness=gradual)),ask,What time is wake up?
+LGT-109,Keep the living room lit whenever someone is home in the evenings,lighting,automation,2,automation.create(trigger=occupancy=home condition=time=evening action=light.set(room=living_room state=on)),act,Evening and occupancy are inferable
+LGT-110,Turn off the lights in any room the kids have left,lighting,automation,2,automation.create(trigger=occupancy=child_room=empty action=light.set(room=child_room state=off)),act,Occupancy detection assumed
+LGT-111,Adjust the brightness based on how bright it is outside,lighting,automation,2,automation.create(trigger=outdoor_light=adaptive action=light.set(all=true brightness=adaptive)),ask,Adjustment ratio is personal
+LGT-112,Set up a relaxing evening routine when I get home,lighting,automation,3,automation.create(trigger=event=user_arrives condition=time=evening action=unknown),ask,Relaxing is personal — needs learned preferences
+LGT-113,Make the house feel good for Sunday mornings,lighting,automation,3,automation.create(trigger=time=sunday_morning action=unknown),ask,Sunday morning feel is personal
+LGT-114,Set up lighting for when we have movie nights,lighting,automation,3,automation.create(trigger=utterance=movie_night action=unknown),ask,Movie night setup is personal
+LGT-115,Automatically make the house feel right at bedtime,lighting,automation,3,automation.create(trigger=time=bedtime action=unknown),ask,Right at bedtime is personal
+LGT-116,Create a morning lighting routine that wakes me up nicely,lighting,automation,3,automation.create(trigger=time=morning action=unknown),ask,Nice wake-up routine is personal
+LGT-117,Set up a lighting routine for family evenings that feels right for us,lighting,automation,3,automation.create(trigger=time=evening action=unknown),ask,Family evening routine is personal
+LGT-118,Do what you normally do when I get home,lighting,automation,4,unknown — requires user history,ask,
+LGT-119,Set it up the way I like on weekday evenings,lighting,automation,4,unknown — requires user history,ask,
+LGT-120,Recreate the lighting setup we had last summer,lighting,automation,4,unknown — requires user history,ask,requires user history

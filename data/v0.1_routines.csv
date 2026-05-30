@@ -1,0 +1,121 @@
+id,command,category,interaction_type,tier,expected_action,expected_initiative,notes
+ROU-001,Turn off all the lights and lock all the doors,routines,command,1,multi.set([light.set(all=true state=off) lock.set(all=true state=locked)]),act,
+ROU-002,Lock all the doors and arm the alarm,routines,command,1,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=away)]),act,
+ROU-003,Turn on the lights and set the thermostat to 21 degrees,routines,command,1,multi.set([light.set(all=true state=on) thermostat.set(temp=21 unit=C)]),act,
+ROU-004,Turn off the TV and dim the bedroom lights to 20 percent,routines,command,1,multi.set([tv.set(state=off) light.set(room=bedroom brightness=20%)]),act,
+ROU-005,Lock the front door and turn on the porch light,routines,command,1,multi.set([lock.set(door=front state=locked) light.set(room=porch state=on)]),act,
+ROU-006,Turn off all the lights and turn off all the speakers,routines,command,1,multi.set([light.set(all=true state=off) speaker.set(all=true state=off)]),act,
+ROU-007,Close the garage and lock all the doors,routines,command,1,multi.set([garage.set(state=closed) lock.set(all=true state=locked)]),act,
+ROU-008,Arm the alarm and turn off all the lights,routines,command,1,multi.set([alarm.set(state=armed) light.set(all=true state=off)]),act,
+ROU-009,Turn on the hallway light and unlock the front door,routines,command,1,multi.set([light.set(room=hallway state=on) lock.set(door=front state=unlocked)]),act,
+ROU-010,Turn off the heating and lock all the doors,routines,command,1,multi.set([thermostat.set(mode=off) lock.set(all=true state=locked)]),act,
+ROU-011,Turn on the garden lights and arm the alarm,routines,command,1,multi.set([light.set(room=garden state=on) alarm.set(state=armed mode=home)]),act,
+ROU-012,Start the coffee maker and turn on the kitchen lights,routines,command,1,multi.set([coffee_maker.set(state=on) light.set(room=kitchen state=on)]),act,
+ROU-013,Pause the music and turn on the hallway light,routines,command,1,multi.set([audio.pause() light.set(room=hallway state=on)]),act,
+ROU-014,Lock all doors and turn off all media,routines,command,1,multi.set([lock.set(all=true state=locked) tv.set(all=true state=off) speaker.set(all=true state=off)]),act,
+ROU-015,Set the heating to 20 degrees and turn on the living room lights,routines,command,1,multi.set([thermostat.set(temp=20 unit=C) light.set(room=living_room state=on)]),act,
+ROU-016,Turn off all the lights lock all the doors and arm the alarm,routines,command,1,multi.set([light.set(all=true state=off) lock.set(all=true state=locked) alarm.set(state=armed)]),act,
+ROU-017,Unlock the front door and turn on the hallway light,routines,command,1,multi.set([lock.set(door=front state=unlocked) light.set(room=hallway state=on)]),act,
+ROU-018,Turn off the oven and lock the back door,routines,command,1,multi.set([oven.set(state=off) lock.set(door=back state=locked)]),act,
+ROU-019,Start the robot vacuum and turn off the lights downstairs,routines,command,1,multi.set([vacuum.set(state=on) light.set(floor=downstairs state=off)]),act,
+ROU-020,Turn on the outdoor lights and arm the perimeter,routines,command,1,multi.set([light.set(room=outdoor state=on) alarm.set(state=armed mode=perimeter)]),act,
+ROU-021,Mute all speakers and dim the living room lights,routines,command,1,multi.set([volume.set(all=true state=mute) light.set(room=living_room brightness=20%)]),act,
+ROU-022,Turn off all climate control and lock all doors,routines,command,1,multi.set([thermostat.set(all=true mode=off) lock.set(all=true state=locked)]),act,
+ROU-023,Turn on the porch light and check the front door camera,routines,command,1,multi.set([light.set(room=porch state=on) camera.view(device=front_door)]),act,
+ROU-024,Set the thermostat to 18 degrees and dim the bedroom lights to 5 percent,routines,command,1,multi.set([thermostat.set(room=bedroom temp=18 unit=C) light.set(room=bedroom brightness=5%)]),act,
+ROU-025,Turn on the living room lights and play some background music,routines,command,1,multi.set([light.set(room=living_room state=on) audio.play(room=living_room genre=ambient volume=low)]),act,
+ROU-026,Turn off the TV the lights and lock the front door,routines,command,1,multi.set([tv.set(state=off) light.set(all=true state=off) lock.set(door=front state=locked)]),act,
+ROU-027,Start the coffee maker and turn on the kitchen lights and set heating to 21 degrees,routines,command,1,multi.set([coffee_maker.set(state=on) light.set(room=kitchen state=on) thermostat.set(temp=21 unit=C)]),act,
+ROU-028,Lock the back door and close the garage and arm the alarm,routines,command,1,multi.set([lock.set(door=back state=locked) garage.set(state=closed) alarm.set(state=armed mode=away)]),act,
+ROU-029,Unlock the front door and turn on the hallway light and disarm the alarm,routines,command,1,multi.set([lock.set(door=front state=unlocked) light.set(room=hallway state=on) alarm.set(state=disarmed)]),act,
+ROU-030,Turn off all outdoor lights and lock the gates,routines,command,1,multi.set([light.set(room=outdoor state=off) gate.set(location=front state=closed) gate.set(location=side state=closed)]),act,
+ROU-031,Turn off the kitchen lights and start the dishwasher and lock the back door,routines,command,1,multi.set([light.set(room=kitchen state=off) dishwasher.set(state=on mode=eco) lock.set(door=back state=locked)]),act,
+ROU-032,Set the bedroom to 18 degrees and dim the bedroom lights to 5 percent and turn the TV off,routines,command,1,multi.set([thermostat.set(room=bedroom temp=18 unit=C) light.set(room=bedroom brightness=5%) tv.set(state=off)]),act,
+ROU-033,Start the robot vacuum and turn off the downstairs lights,routines,command,1,multi.set([vacuum.set(state=on) light.set(floor=downstairs state=off)]),act,
+ROU-034,Turn the heating on and unlock the front door and turn on the porch light,routines,command,1,multi.set([thermostat.set(mode=heat) lock.set(door=front state=unlocked) light.set(room=porch state=on)]),act,
+ROU-035,Turn off all media and dim all lights to 10 percent and lock all doors,routines,command,1,multi.set([tv.set(all=true state=off) speaker.set(all=true state=off) light.set(all=true brightness=10%) lock.set(all=true state=locked)]),act,
+ROU-036,Good morning,routines,command,3,multi.set([light.set(room=bedroom brightness=gradual) thermostat.set(mode=heat) coffee_maker.set(state=on)]),ask,Morning trio inferred — exact sequence is personal
+ROU-037,Goodnight,routines,command,2,multi.set([light.set(all=true state=off) lock.set(all=true state=locked) alarm.set(state=armed mode=home)]),act,Night trio inferred — exact devices personal
+ROU-038,I am heading out,routines,command,2,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=away) light.set(all=true state=off)]),act,Leaving implies secure and dark — media off also assumed
+ROU-039,I am home,routines,command,3,multi.set([lock.set(door=front state=unlocked) alarm.set(state=disarmed) light.set(room=hallway state=on)]),ask,Welcome home trio inferred — other devices personal
+ROU-040,Get ready for bed,routines,command,3,multi.set([light.set(all=true brightness=low) tv.set(state=off) thermostat.set(room=bedroom temp=18)]),ask,Bed prep trio inferred — exact settings personal
+ROU-041,We are leaving,routines,command,2,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=away)]),act,Leaving implies lock and arm — other devices personal
+ROU-042,Secure the house,routines,command,2,multi.set([lock.set(all=true state=locked) alarm.set(state=armed)]),ask,Secure scope is personal — camera and media states unknown
+ROU-043,Wake up the house,routines,command,3,multi.set([light.set(all=true state=on) thermostat.set(mode=heat) speaker.set(all=true state=on)]),ask,Wake-up trio inferred — exact settings personal
+ROU-044,Wind down for the night,routines,command,3,multi.set([light.set(all=true brightness=lower) tv.set(state=off) thermostat.set(room=bedroom temp=lower)]),ask,Wind-down trio inferred — exact levels personal
+ROU-045,Set up for dinner,routines,command,2,multi.set([light.set(room=dining brightness=50% colour=warm_white) audio.play(room=dining genre=ambient)]),act,Dinner duo inferred — thermostat and other devices personal
+ROU-046,Get the house ready for guests,routines,command,2,multi.set([light.set(all=true brightness=80%) thermostat.set(temp=20)]),ask,Guest setup is personal — which devices and exact settings?
+ROU-047,Shut everything down,routines,command,2,multi.set([light.set(all=true state=off) tv.set(all=true state=off) speaker.set(all=true state=off)]),ask,Everything is personal — does it include alarm and locks?
+ROU-048,Open up the house,routines,command,2,multi.set([lock.set(door=front state=unlocked) light.set(room=hallway state=on) thermostat.set(mode=heat)]),ask,Open up scope is personal — which devices?
+ROU-049,Start the day,routines,command,2,multi.set([light.set(room=bedroom brightness=100%) coffee_maker.set(state=on)]),ask,Starting the day routine is personal — which devices?
+ROU-050,Evening mode,routines,command,2,multi.set([light.set(all=true brightness=40% colour=warm_white) thermostat.set(temp=20)]),ask,Evening mode is personal — exact settings unknown
+ROU-051,Set up for a movie,routines,command,2,multi.set([tv.set(source=streaming) light.set(room=living_room brightness=10%) thermostat.set(room=living_room temp=20)]),act,Movie trio inferred — exact platform and temperature personal
+ROU-052,Morning routine,routines,command,2,multi.set([light.set(room=bedroom brightness=gradual) thermostat.set(mode=heat) coffee_maker.set(state=on)]),ask,Morning routine is personal — which devices and sequence?
+ROU-053,Night mode,routines,command,3,multi.set([light.set(all=true state=off) lock.set(all=true state=locked) alarm.set(state=armed mode=home)]),ask,Night mode trio inferred — camera and media states personal
+ROU-054,Away mode,routines,command,2,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=away) light.set(all=true state=off)]),act,Away trio inferred — camera activation personal
+ROU-055,Welcome home,routines,command,2,multi.set([lock.set(door=front state=unlocked) alarm.set(state=disarmed) light.set(room=hallway state=on)]),act,Welcome home trio inferred — additional devices personal
+ROU-056,Time for bed,routines,command,3,multi.set([light.set(all=true state=off) lock.set(all=true state=locked) alarm.set(state=armed mode=home)]),ask,Standard bedtime trio inferred
+ROU-057,Start the morning,routines,command,3,multi.set([light.set(room=bedroom brightness=gradual) coffee_maker.set(state=on) thermostat.set(mode=heat)]),ask,Morning trio inferred
+ROU-058,I am ready to leave,routines,command,2,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=away) light.set(all=true state=off)]),act,Leaving trio inferred
+ROU-059,Get the house ready,routines,command,2,multi.set([light.set(all=true state=on) thermostat.set(mode=heat)]),ask,Ready for what? Which devices?
+ROU-060,Settle in for the evening,routines,command,2,multi.set([light.set(all=true brightness=40% colour=warm_white) thermostat.set(temp=20 unit=C)]),act,Evening comfort pair inferred
+ROU-061,Open everything up for the day,routines,command,2,multi.set([lock.set(door=front state=unlocked) light.set(all=true state=on) thermostat.set(mode=heat)]),ask,Open up scope is personal
+ROU-062,Time to get going,routines,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=away)]),ask,Leaving assumed
+ROU-063,Shut it all down,routines,command,2,multi.set([tv.set(all=true state=off) speaker.set(all=true state=off) light.set(all=true state=off) lock.set(all=true state=locked)]),ask,Does shut down include alarm?
+ROU-064,Set up the house just the way I like it,routines,command,3,multi.set([device=unknown action=unknown]),ask,Just the way I like it is entirely personal
+ROU-065,Make everything feel right,routines,command,3,multi.set([device=unknown action=unknown]),ask,Feel right is personal — no action without history
+ROU-066,Get things ready for the evening,routines,command,3,multi.set([device=unknown action=unknown]),ask,Evening ready is personal — exact devices and settings unknown
+ROU-067,Set the house up for the family,routines,command,3,multi.set([device=unknown action=unknown]),ask,Family setup is personal
+ROU-068,Make the house comfortable,routines,command,3,multi.set([device=unknown action=unknown]),ask,Comfortable is personal across all device categories
+ROU-069,Prepare the house for the night,routines,command,3,multi.set([device=unknown action=unknown]),ask,Night prep is personal — devices and levels unknown
+ROU-070,Get the house into weekend mode,routines,command,3,multi.set([device=unknown action=unknown]),ask,Weekend mode is personal
+ROU-071,Set up for quality time with the family,routines,command,3,multi.set([device=unknown action=unknown]),ask,Quality time setup is personal
+ROU-072,Make the house feel like home,routines,command,3,multi.set([device=unknown action=unknown]),ask,Feel like home is entirely personal
+ROU-073,Get everything sorted,routines,command,3,multi.set([device=unknown action=unknown]),ask,Sorted = personal — which devices and to what state?
+ROU-074,Make the house feel exactly how I like it,routines,command,3,multi.set([device=unknown action=unknown]),ask,Exactly how I like it is entirely personal
+ROU-075,Get the house into the right mode for the weekend,routines,command,3,multi.set([device=unknown action=unknown]),ask,Weekend mode is personal
+ROU-076,Make everything comfortable and ready for us,routines,command,3,multi.set([device=unknown action=unknown]),ask,Comfortable setup is personal
+ROU-077,Get the house into our evening routine,routines,command,3,multi.set([device=unknown action=unknown]),ask,Evening routine is personal
+ROU-078,The usual,routines,command,4,unknown — requires user history,ask,Classic Tier 4
+ROU-079,Like last weekend,routines,command,4,unknown — requires user history,ask,
+ROU-080,You know what to do,routines,command,4,unknown — requires user history,ask,
+ROU-081,Same as always,routines,command,4,unknown — requires user history,ask,
+ROU-082,Do your thing,routines,command,4,unknown — requires user history,ask,
+ROU-083,The routine we had in the old house,routines,command,4,unknown — requires user history,ask,requires user history
+ROU-084,Exactly how we had it set up before,routines,command,4,unknown — requires user history,ask,requires user history
+ROU-085,When I say goodnight lock all doors arm the alarm and turn off all lights,routines,automation,1,automation.create(trigger=utterance=goodnight action=multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=home) light.set(all=true state=off)])),act,
+ROU-086,At 7am on weekdays turn on the kitchen lights start the coffee maker and set the heating to 21 degrees,routines,automation,1,automation.create(trigger=time=07:00 day=weekday action=multi.set([light.set(room=kitchen state=on) coffee_maker.set(state=on) thermostat.set(temp=21 unit=C)])),act,
+ROU-087,When everyone leaves lock all doors arm the alarm and turn off all lights and media,routines,automation,1,automation.create(trigger=occupancy=empty action=multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=away) light.set(all=true state=off) speaker.set(all=true state=off)])),act,
+ROU-088,When I arrive home unlock the front door turn on the hallway light and disarm the alarm,routines,automation,1,automation.create(trigger=event=user_arrives action=multi.set([lock.set(door=front state=unlocked) light.set(room=hallway state=on) alarm.set(state=disarmed)])),act,
+ROU-089,At 11pm every night turn off all lights lock all doors and arm the alarm,routines,automation,1,automation.create(trigger=time=23:00 action=multi.set([light.set(all=true state=off) lock.set(all=true state=locked) alarm.set(state=armed mode=home)])),act,
+ROU-090,When the baby monitor detects sound turn on the hallway light and reduce all speaker volumes,routines,automation,1,automation.create(trigger=baby_monitor=sound_detected action=multi.set([light.set(room=hallway state=on) volume.set(all=true level=lower)])),act,
+ROU-091,At sunset turn on all outdoor lights and lock the back gate,routines,automation,1,automation.create(trigger=event=sunset action=multi.set([light.set(location=outdoor state=on) gate.set(location=back state=closed)])),act,
+ROU-092,When the last person leaves turn off all appliances lock all doors and arm the alarm,routines,automation,1,automation.create(trigger=occupancy=empty action=multi.set([appliance.set(all=true state=off) lock.set(all=true state=locked) alarm.set(state=armed mode=away)])),act,
+ROU-093,At 10pm every night turn off all media and dim all lights to 10 percent,routines,automation,1,automation.create(trigger=time=22:00 action=multi.set([tv.set(all=true state=off) speaker.set(all=true state=off) light.set(all=true brightness=10%)])),act,
+ROU-094,When the school run is done turn on the kitchen lights and start the kettle,routines,automation,1,automation.create(trigger=event=school_run_complete action=multi.set([light.set(room=kitchen state=on) kettle.set(state=on)])),act,
+ROU-095,When I say rise and shine turn on the lights start the coffee maker and set heating to 21 degrees,routines,automation,1,automation.create(trigger=utterance=rise_and_shine action=multi.set([light.set(all=true state=on) coffee_maker.set(state=on) thermostat.set(temp=21 unit=C)])),act,
+ROU-096,Lock and arm when the last person leaves and turn off all media and appliances,routines,automation,1,automation.create(trigger=occupancy=empty action=multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=away) tv.set(all=true state=off) speaker.set(all=true state=off)])),act,
+ROU-097,Disarm and unlock and turn on the hallway light when the first person arrives home,routines,automation,1,automation.create(trigger=event=first_person_arrives action=multi.set([alarm.set(state=disarmed) lock.set(door=front state=unlocked) light.set(room=hallway state=on)])),act,
+ROU-098,At midnight turn off all lights lock all doors and arm in home mode,routines,automation,1,automation.create(trigger=time=00:00 action=multi.set([light.set(all=true state=off) lock.set(all=true state=locked) alarm.set(state=armed mode=home)])),act,
+ROU-099,When the baby monitor detects sound dim all lights and reduce all volumes,routines,automation,1,automation.create(trigger=baby_monitor=sound_detected action=multi.set([light.set(all=true brightness=10%) volume.set(all=true level=lower)])),act,
+ROU-100,Run the morning routine automatically when I wake up,routines,automation,2,automation.create(trigger=event=wake_up action=routine=morning),ask,Wake-up detection? Morning routine devices are personal
+ROU-101,Secure the house gradually as it gets late,routines,automation,2,automation.create(trigger=time=late action=multi.set([light.set(brightness=gradual_lower) lock.set(all=true state=locked)])),ask,What time is late? Gradual = personal
+ROU-102,Wind down the house when I start my bedtime routine,routines,automation,2,automation.create(trigger=event=bedtime_start action=multi.set([light.set(all=true brightness=lower) tv.set(state=off)])),ask,Bedtime routine trigger is personal
+ROU-103,Set up for a quiet evening when the kids go to bed,routines,automation,2,automation.create(trigger=event=children_bedtime action=multi.set([volume.set(all=true level=low) light.set(all=true brightness=lower)])),ask,Kids bedtime time unknown. Quiet setup is personal
+ROU-104,Run the away routine when we leave for more than an hour,routines,automation,2,automation.create(trigger=occupancy=away duration>1hr action=routine=away),ask,Away routine devices are personal. Duration threshold stated
+ROU-105,Adapt the house for different family members when they arrive home,routines,automation,2,automation.create(trigger=event=family_member_arrives action=routine=person_specific),ask,Per-person routines are personal — identity detection needed
+ROU-106,Automatically switch to weekend mode on Saturday mornings,routines,automation,2,automation.create(trigger=time=saturday_morning action=routine=weekend),ask,Weekend morning time and routine content are personal
+ROU-107,Run the wind-down routine when it gets late,routines,automation,2,automation.create(trigger=time=late action=routine=wind_down),ask,What time is late? Wind-down routine content is personal
+ROU-108,Gradually wind down the house as it gets later in the evening,routines,automation,2,automation.create(trigger=time=late action=multi.set([light.set(brightness=gradual_lower) tv.set(state=off)])),ask,What time is late? How gradual?
+ROU-109,Set up for the day automatically when the first person wakes up,routines,automation,2,automation.create(trigger=event=first_person_wakes action=multi.set([light.set(room=kitchen state=on) coffee_maker.set(state=on)])),ask,How does system detect wake-up?
+ROU-110,Switch the house to quiet mode when the kids go to bed,routines,automation,2,automation.create(trigger=event=children_bedtime action=multi.set([volume.set(all=true level=low) light.set(all=true brightness=lower)])),ask,Kids bedtime time unknown
+ROU-111,Prepare the house for departure 10 minutes before we usually leave,routines,automation,2,automation.create(trigger=event=departure_approaching action=multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=away)])),ask,What time is usual departure?
+ROU-112,Set up a daily routine that runs automatically,routines,automation,3,automation.create(trigger=time=daily action=unknown),ask,Daily routine is personal — no devices or times specified
+ROU-113,Create an evening wind-down that works for the whole family,routines,automation,3,automation.create(trigger=time=evening action=unknown),ask,Family wind-down is personal — timing and devices unknown
+ROU-114,Build a routine that makes the mornings smooth,routines,automation,3,automation.create(trigger=time=morning action=unknown),ask,Smooth morning is personal — no devices or sequence
+ROU-115,Automate the house so it manages itself while we are away,routines,automation,3,automation.create(trigger=occupancy=away action=unknown),ask,Self-managing away mode is personal
+ROU-116,Create a personalised routine that fits our lifestyle,routines,automation,3,automation.create(trigger=adaptive action=unknown),ask,Personalised routine is entirely personal by definition
+ROU-117,Build a full daily routine that manages the house automatically from morning to night based on how we live,routines,automation,3,automation.create(trigger=time=daily action=unknown),ask,Full daily routine is personal
+ROU-118,Do what you normally do at this time,routines,automation,4,unknown — requires user history,ask,
+ROU-119,The usual routine,routines,automation,4,unknown — requires user history,ask,
+ROU-120,Set up the same whole-home routine we had before the renovation,routines,automation,4,unknown — requires user history,ask,requires user history

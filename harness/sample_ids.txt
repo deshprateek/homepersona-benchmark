@@ -1,0 +1,53 @@
+# Fixed 42-row sample — 5% of 840 total rows
+# 6 rows per category, stratified by tier and interaction type
+# Do not change these IDs unless replacing the sample intentionally
+#
+# Slot breakdown per category:
+#   001 — command T1 act
+#   020 — command T1 act
+#   040 — command T2 act/ask
+#   070 — command T3 ask
+#   090 — automation T1 act
+#   105 — automation T2 act/ask
+LGT-001
+LGT-020
+LGT-040
+LGT-070
+LGT-090
+LGT-105
+CLM-001
+CLM-020
+CLM-040
+CLM-070
+CLM-090
+CLM-105
+ACC-001
+ACC-020
+ACC-040
+ACC-070
+ACC-090
+ACC-105
+MED-001
+MED-020
+MED-040
+MED-070
+MED-090
+MED-105
+APP-001
+APP-020
+APP-040
+APP-070
+APP-090
+APP-105
+CAM-001
+CAM-020
+CAM-040
+CAM-070
+CAM-090
+CAM-105
+ROU-001
+ROU-020
+ROU-040
+ROU-070
+ROU-090
+ROU-105

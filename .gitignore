@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Runs (raw model outputs — not committed, reproduce with harness)
+runs/
+
+# OS
+.DS_Store

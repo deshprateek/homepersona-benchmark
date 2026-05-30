@@ -1,0 +1,121 @@
+id,command,category,interaction_type,tier,expected_action,expected_initiative,notes
+ACC-001,Lock the front door,access,command,1,lock.set(door=front state=locked),act,
+ACC-002,Unlock the front door,access,command,1,lock.set(door=front state=unlocked),act,
+ACC-003,Lock the back door,access,command,1,lock.set(door=back state=locked),act,
+ACC-004,Unlock the back door,access,command,1,lock.set(door=back state=unlocked),act,
+ACC-005,Lock all the doors,access,command,1,lock.set(all=true state=locked),act,
+ACC-006,Unlock all the doors,access,command,1,lock.set(all=true state=unlocked),act,
+ACC-007,Open the garage door,access,command,1,garage.set(state=open),act,
+ACC-008,Close the garage door,access,command,1,garage.set(state=closed),act,
+ACC-009,Arm the alarm,access,command,1,alarm.set(state=armed),act,
+ACC-010,Disarm the alarm,access,command,1,alarm.set(state=disarmed),act,
+ACC-011,Set the alarm to home mode,access,command,1,alarm.set(state=armed mode=home),act,
+ACC-012,Set the alarm to away mode,access,command,1,alarm.set(state=armed mode=away),act,
+ACC-013,Lock the patio door,access,command,1,lock.set(door=patio state=locked),act,
+ACC-014,Unlock the garage side door,access,command,1,lock.set(door=garage_side state=unlocked),act,
+ACC-015,Check if the front door is locked,access,command,1,lock.check(door=front),act,
+ACC-016,Check if all doors are locked,access,command,1,lock.check(all=true),act,
+ACC-017,Open the front gate,access,command,1,gate.set(state=open),act,
+ACC-018,Close the front gate,access,command,1,gate.set(state=closed),act,
+ACC-019,Turn on the security system,access,command,1,alarm.set(state=armed),act,
+ACC-020,Turn off the security system,access,command,1,alarm.set(state=disarmed),act,
+ACC-021,Lock the sliding door,access,command,1,lock.set(door=sliding state=locked),act,
+ACC-022,Check if the garage door is closed,access,command,1,garage.check(state),act,
+ACC-023,Unlock the side gate,access,command,1,gate.set(location=side state=open),act,
+ACC-024,Lock the bedroom door,access,command,1,lock.set(door=bedroom state=locked),act,
+ACC-025,Unlock the bedroom door,access,command,1,lock.set(door=bedroom state=unlocked),act,
+ACC-026,Lock the patio door,access,command,1,lock.set(door=patio state=locked),act,
+ACC-027,Unlock the side gate,access,command,1,gate.set(location=side state=open),act,
+ACC-028,Check if the back door is locked,access,command,1,lock.check(door=back),act,
+ACC-029,Arm the alarm in perimeter mode,access,command,1,alarm.set(state=armed mode=perimeter),act,
+ACC-030,Disarm the alarm,access,command,1,alarm.set(state=disarmed),act,
+ACC-031,Lock the garage side door,access,command,1,lock.set(door=garage_side state=locked),act,
+ACC-032,Open the side gate,access,command,1,gate.set(location=side state=open),act,
+ACC-033,Close the side gate,access,command,1,gate.set(location=side state=closed),act,
+ACC-034,Check if the garage door is open,access,command,1,garage.check(state),act,
+ACC-035,Unlock the sliding door,access,command,1,lock.set(door=sliding state=unlocked),act,
+ACC-036,Lock up,access,command,2,lock.set(all=true state=locked),act,All doors assumed
+ACC-037,Is everything locked,access,command,2,lock.check(all=true),act,
+ACC-038,Secure the house,access,command,2,lock.set(all=true state=locked),act,All doors assumed
+ACC-039,Lock the door,access,command,2,lock.set(door=unknown state=locked),ask,Which door?
+ACC-040,Open up,access,command,3,lock.set(door=front state=unlocked),ask,Front door assumed
+ACC-041,Can you lock up for the night,access,command,2,lock.set(all=true state=locked),act,All doors assumed
+ACC-042,Someone is at the door,access,command,2,lock.check(door=front),act,Front door assumed
+ACC-043,Let the dog out,access,command,3,lock.set(door=back state=unlocked),ask,Back door assumed
+ACC-044,I am heading out,access,command,2,lock.set(all=true state=locked),act,Leaving implies lock all
+ACC-045,I am home,access,command,3,lock.set(door=front state=unlocked),ask,Front door assumed
+ACC-046,Make sure everything is secure,access,command,2,lock.set(all=true state=locked),act,All doors assumed
+ACC-047,Open the door for me,access,command,2,lock.set(door=front state=unlocked),ask,Which door?
+ACC-048,Did I leave the garage open,access,command,2,garage.check(state),act,
+ACC-049,Lock everything except the back door,access,command,2,lock.set(all=true state=locked exclude=back),act,
+ACC-050,Unlock for the cleaner,access,command,2,lock.set(door=front state=unlocked),ask,Which door? When is cleaner arriving?
+ACC-051,Set the alarm,access,command,2,alarm.set(state=armed mode=unknown),ask,Home or away mode?
+ACC-052,The kids are home,access,command,3,lock.set(door=front state=unlocked),ask,Front door assumed
+ACC-053,I forgot to lock up,access,command,2,lock.set(all=true state=locked),act,All doors assumed
+ACC-054,Can you check the doors,access,command,2,lock.check(all=true),act,
+ACC-055,Let me in,access,command,3,lock.set(door=front state=unlocked),ask,Front door assumed — user outside
+ACC-056,Make sure we are locked up,access,command,2,lock.check(all=true),act,Check first assumed
+ACC-057,Can you secure the back of the house,access,command,2,lock.set(door=back state=locked),act,Back door assumed
+ACC-058,Check if I left anything open,access,command,2,lock.check(all=true),act,All doors assumed
+ACC-059,Someone is knocking at the door,access,command,2,camera.view(device=front_door),act,Front door assumed
+ACC-060,Can you let me in,access,command,3,lock.set(door=front state=unlocked),ask,Front door assumed
+ACC-061,Make the garden area secure,access,command,2,lock.set(door=back state=locked),ask,Back door or gate?
+ACC-062,Sort out the locks before we sleep,access,command,2,lock.set(all=true state=locked),act,All doors assumed for bedtime
+ACC-063,Is the house secure,access,command,2,lock.check(all=true),act,Status check assumed
+ACC-064,Make the house safe,access,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed)]),ask,Safe means different things to different people
+ACC-065,Set up the house for when we are away,access,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=away)]),ask,Away setup is personal
+ACC-066,Get ready for bedtime,access,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=home)]),ask,Bedtime security is personal
+ACC-067,Prepare the house for guests,access,command,3,lock.set(door=front state=unlocked),ask,Guest preparation is personal
+ACC-068,Lock down the house,access,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed)]),ask,Lockdown level is personal
+ACC-069,Set up for the night,access,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=home)]),ask,Night security setup is personal
+ACC-070,Secure the perimeter,access,command,3,multi.set([lock.set(all=true state=locked) gate.set(state=closed)]),ask,Perimeter scope is personal
+ACC-071,Make it feel secure,access,command,3,lock.set(all=true state=locked),ask,Secure feeling is personal
+ACC-072,Sort out the security,access,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=unknown)]),ask,Sort out is personal — which devices and mode?
+ACC-073,Set it up before bed,access,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=home)]),ask,Bedtime routine is personal
+ACC-074,Make sure we are properly protected tonight,access,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed)]),ask,Protection level is personal
+ACC-075,Set up security for the kids being home alone,access,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=home)]),ask,Kids home security is personal
+ACC-076,Keep things secure without making it feel like a fortress,access,command,3,lock.set(all=true state=locked),ask,Balance of security and access is personal
+ACC-077,Set the house up safely for the weekend,access,command,3,multi.set([lock.set(all=true state=locked) alarm.set(state=armed mode=unknown)]),ask,Weekend security setup is personal
+ACC-078,The usual,access,command,4,unknown — requires user history,ask,Classic Tier 4
+ACC-079,Like when we went on holiday last time,access,command,4,unknown — requires user history,ask,
+ACC-080,You know what to do when I leave,access,command,4,unknown — requires user history,ask,
+ACC-081,Same as last night,access,command,4,unknown — requires user history,ask,
+ACC-082,Do the usual security routine,access,command,4,unknown — requires user history,ask,
+ACC-083,The usual security setup we use on holiday,access,command,4,unknown — requires user history,ask,
+ACC-084,Same as when we had guests last time,access,command,4,unknown — requires user history,ask,
+ACC-085,Lock all doors every night at 11pm,access,automation,1,automation.create(trigger=time=23:00 action=lock.set(all=true state=locked)),act,
+ACC-086,When nobody is home arm the alarm in away mode,access,automation,1,automation.create(trigger=occupancy=empty action=alarm.set(state=armed mode=away)),act,
+ACC-087,When I say goodnight lock all the doors,access,automation,1,automation.create(trigger=utterance=goodnight action=lock.set(all=true state=locked)),act,
+ACC-088,Close the garage door automatically at 10pm,access,automation,1,automation.create(trigger=time=22:00 action=garage.set(state=closed)),act,
+ACC-089,Unlock the front door when I arrive home,access,automation,1,automation.create(trigger=event=user_arrives action=lock.set(door=front state=unlocked)),act,
+ACC-090,Arm the alarm when the last person leaves,access,automation,1,automation.create(trigger=occupancy=empty action=alarm.set(state=armed mode=away)),act,
+ACC-091,Lock all doors when the garage door closes,access,automation,1,automation.create(trigger=garage=closed action=lock.set(all=true state=locked)),act,
+ACC-092,Notify me if the front door is left unlocked after midnight,access,automation,1,automation.create(trigger=time>00:00 condition=lock.door=front.state=unlocked action=notify),act,
+ACC-093,Disarm the alarm when I get home,access,automation,1,automation.create(trigger=event=user_arrives action=alarm.set(state=disarmed)),act,
+ACC-094,Lock the back door every day at sunset,access,automation,1,automation.create(trigger=event=sunset action=lock.set(door=back state=locked)),act,
+ACC-095,Lock all doors at midnight every night,access,automation,1,automation.create(trigger=time=00:00 action=lock.set(all=true state=locked)),act,
+ACC-096,Arm the alarm in home mode every night at 10pm,access,automation,1,automation.create(trigger=time=22:00 action=alarm.set(state=armed mode=home)),act,
+ACC-097,Unlock the front door every weekday at 3pm for school pickup,access,automation,1,automation.create(trigger=time=15:00 day=weekday action=lock.set(door=front state=unlocked)),act,
+ACC-098,Close the front gate every evening at 8pm,access,automation,1,automation.create(trigger=time=20:00 action=gate.set(location=front state=closed)),act,
+ACC-099,Send an alert if the back door is unlocked after 11pm,access,automation,1,automation.create(trigger=time>23:00 condition=lock.door=back.state=unlocked action=notify),act,
+ACC-100,Lock up when I leave,access,automation,2,automation.create(trigger=event=user_leaves action=lock.set(all=true state=locked)),act,All doors assumed
+ACC-101,Secure everything when we go to bed,access,automation,2,automation.create(trigger=event=bedtime action=unknown),ask,Bedtime = what time? Secure = which devices?
+ACC-102,Let me know if anything is left open when I leave,access,automation,2,automation.create(trigger=event=user_leaves condition=any_door_open action=notify),act,Which doors?
+ACC-103,Automatically lock up if I forget,access,automation,2,automation.create(trigger=time=unknown condition=doors_unlocked action=lock.set(all=true state=locked)),ask,When is forget? What time to auto-lock?
+ACC-104,When it gets late make sure everything is locked,access,automation,2,automation.create(trigger=time=late action=lock.set(all=true state=locked)),ask,What is late?
+ACC-105,Set up the alarm when nobody is home,access,automation,2,automation.create(trigger=occupancy=empty action=alarm.set(state=armed mode=unknown)),ask,Home or away mode?
+ACC-106,Unlock for my partner when they get home,access,automation,2,automation.create(trigger=event=partner_arrives action=lock.set(door=front state=unlocked)),act,Front door assumed
+ACC-107,Lock the house up if I fall asleep,access,automation,2,automation.create(trigger=activity=sleeping action=lock.set(all=true state=locked)),ask,How does system detect sleep?
+ACC-108,Lock up automatically when it looks like we have all gone to bed,access,automation,2,automation.create(trigger=activity=all_sleeping action=lock.set(all=true state=locked)),ask,How does system detect all sleeping?
+ACC-109,Keep the front gate closed when nobody is home,access,automation,2,automation.create(trigger=occupancy=empty action=gate.set(location=front state=closed)),act,Occupancy and gate assumed
+ACC-110,Alert me if any door is left open for more than 15 minutes,access,automation,2,automation.create(trigger=door=open duration>15min action=notify),act,15 minutes stated explicitly
+ACC-111,Disarm the alarm when I drive onto the driveway,access,automation,2,automation.create(trigger=event=user_vehicle_arrives action=alarm.set(state=disarmed)),ask,How does system detect vehicle arrival?
+ACC-112,Set up the house so I can sleep soundly,access,automation,3,automation.create(trigger=time=bedtime action=unknown),ask,Sleep soundly security is personal
+ACC-113,Make the house secure without waking the kids,access,automation,3,automation.create(trigger=time=night action=unknown),ask,Quiet security routine is personal
+ACC-114,Set up security for when we go on holiday,access,automation,3,automation.create(trigger=occupancy=extended_away action=unknown),ask,Holiday security is personal
+ACC-115,Automatically protect the house the way I like it,access,automation,3,automation.create(trigger=continuous action=unknown),ask,Protection style is personal
+ACC-116,Set up a bedtime security routine for the family,access,automation,3,automation.create(trigger=time=bedtime action=unknown),ask,Family bedtime security is personal
+ACC-117,Set up a security routine that balances access for the family with keeping the house safe,access,automation,3,automation.create(trigger=adaptive action=unknown),ask,Balance of access and security is personal
+ACC-118,Do what you normally do when we go away,access,automation,4,unknown — requires user history,ask,
+ACC-119,The usual security routine at night,access,automation,4,unknown — requires user history,ask,
+ACC-120,The security setup we had before we changed the alarm,access,automation,4,unknown — requires user history,ask,

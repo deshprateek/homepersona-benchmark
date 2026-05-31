@@ -64,18 +64,19 @@ We ran 7 models against the 840-row benchmark. The key metric is **false act rat
 
 | Model | Type | Rows | False Act Rate | T2 Accuracy | T3 Accuracy |
 |---|---|---|---|---|---|
-| Mistral 7B | Local Q4 | 42† | 100% | 45% | 0% |
+| Mistral 7B | Local Q4 | **840** | 100% | 51% | 0% |
 | Llama 3.2 3B | Local Q4 | 42† | 100% | 80%* | 0% |
 | Qwen 2.5 32B | Local Q4 | **840** | 70% | 60% | 16% |
 | Llama 3.3 70B | Cloud fp16 | 42† | 46% | 54% | 43% |
-| Qwen 32B | Cloud fp16 | 42† | 7% | 50% | 86% |
+| Qwen 32B | Cloud fp16 | **840‡** | 14% | 49% | 80% |
 | GPT-4o | Cloud fp16 | **840** | 12% | 60% | 83% |
 
-†42-row stratified sample. *43% parse error rate — result biased toward easier rows.
+†42-row stratified sample. *43% parse error rate — biased toward easier rows. ‡31% parse error rate due to thinking token volume (qwen3-32b).
 
 **Key findings:**
-- T2 accuracy is stuck at 45–60% across all model sizes including GPT-4o. The two full 840-row runs both land at exactly 60%. Scale alone does not solve initiative calibration.
-- Quantisation strips safety behaviour: the same Qwen 32B architecture goes from 7% false act rate at fp16 to 70% at Q4. Running locally costs more than just speed.
+- T2 accuracy is stuck at 49–60% across all model sizes including GPT-4o. Scale alone does not solve initiative calibration.
+- Quantisation strips safety behaviour: the same Qwen 32B architecture goes from 14% false act rate at fp16 to 70% at Q4. Running locally costs more than just speed.
+- GPT-4o (12%) and Qwen 32B fp16 (14%) are essentially tied on false act rate — cloud model size beyond 32B provides diminishing safety returns.
 
 ---
 

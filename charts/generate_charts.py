@@ -45,8 +45,8 @@ t2_models = [
     "Qwen 32B\n(fp16 cloud)",
     "GPT-4o\n(~1T cloud)",
 ]
-t2_values     = [45, 60, 54, 50, 60]
-t2_full_run   = [False, True, False, False, True]
+t2_values     = [51, 60, 54, 49, 60]   # full runs: Mistral 51%, Qwen fp16 49%
+t2_full_run   = [True, True, False, True, True]
 
 # False act rate chart — ordered by rate descending (most dangerous first)
 far_models = [
@@ -54,11 +54,11 @@ far_models = [
     "Mistral 7B\n(Q4 local)",
     "Qwen 32B\n(Q4 local)",
     "Llama 3.3 70B\n(fp16 cloud)",
-    "GPT-4o\n(~1T cloud)",
     "Qwen 32B\n(fp16 cloud)",
+    "GPT-4o\n(~1T cloud)",
 ]
-far_values   = [100, 100, 70, 46, 12, 7]
-far_full_run = [False, False, True, False, True, False]
+far_values   = [100, 100, 70, 46, 14, 12]  # Qwen fp16 updated 7→14% (full run)
+far_full_run = [False, False, True, False, True, True]
 
 
 # ── Chart 1: T2 flatness ──────────────────────────────────────────────────────
@@ -194,11 +194,11 @@ ax3.axis("off")
 
 col_labels = ["Model", "Size", "Rows", "False Act Rate", "Level 2 Acc.", "Level 3 Acc."]
 rows = [
-    ["Mistral 7B Q4 (local)",       "7B",   "42†",  "100%",  "45%",  "0%" ],
+    ["Mistral 7B Q4 (local)",       "7B",   "840",  "100%",  "51%",  "0%" ],
     ["Llama 3.2 3B Q4 (local)",     "3B",   "42†",  "100%",  "80%*", "0%" ],
     ["Qwen 2.5 32B Q4 (local)",     "32B",  "840",  "70%",   "60%",  "16%"],
     ["Llama 3.3 70B fp16 (cloud)",  "70B",  "42†",  "46%",   "54%",  "43%"],
-    ["Qwen 32B fp16 (cloud)",       "32B",  "42†",  "7%",    "50%",  "86%"],
+    ["Qwen 32B fp16 (cloud)",       "32B",  "840‡", "14%",   "49%",  "80%"],
     ["GPT-4o (cloud)",              "~1T",  "840",  "12%",   "60%",  "83%"],
 ]
 
@@ -223,7 +223,7 @@ for j in range(len(col_labels)):
     cell.set_edgecolor("white")
 
 # Style rows — alternate shading, highlight full-run rows and dangerous cells
-full_run_rows = {2, 5}   # Qwen Q4 and GPT-4o (0-indexed data rows)
+full_run_rows = {0, 2, 4, 5}  # Mistral, Qwen Q4, Qwen fp16, GPT-4o (0-indexed)
 danger_col = 3            # False Act Rate column index
 
 for i, row_data in enumerate(rows):
@@ -253,7 +253,7 @@ for i, row_data in enumerate(rows):
 
 # Footer notes
 ax3.text(0.01, 0.01,
-         "† 42-row stratified sample.  * 43% parse error rate — result biased toward easier rows.  Bold = full 840-row run.",
+         "† 42-row stratified sample.  * 43% parse error rate — biased toward easier rows.  ‡ 31% parse error rate (thinking token volume).  Bold = full 840-row run.",
          transform=ax3.transAxes, fontsize=8.5, color=GREY, va="bottom")
 
 plt.tight_layout()
